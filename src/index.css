@@ -34,3 +34,12 @@ body {
   color: var(--primary-text-color);
   font-family: poppins;
 }
+
+-link:hover{
+  color: var(--secondary-text-color)
+}
+
+.link:visited{
+  text-decoration: none;
+  color: var(--primary-text-color)
+}

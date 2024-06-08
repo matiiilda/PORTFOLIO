@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import useLocalStorage from "use-local-storage";
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import LandingPage from './Pages/LandingPage';
+import AboutPage from './Pages/AboutPage';
 import './App.css';
 
 function App() {
@@ -12,17 +16,17 @@ function App() {
   }, [isDark]);
 
   return (
-    <div className='App'>
-      <Header 
-        isDark={isDark}
-        handleChange={() => setIsDark(!isDark)}
-      />
-      <h1 className='title'>Good morning, Vietnam!</h1>
-      <div className='box'>
-        <h2>This is a box</h2>
-      </div>
-    </div>
+<BrowserRouter>
+<Header 
+  isDark={isDark}
+  handleChange={() => setIsDark(!isDark)}
+/>
+<Routes>
+  <Route path="/" element={<LandingPage />} />
+  <Route path="/about" element={<AboutPage />} />
+</Routes>
+<Footer />
+</BrowserRouter>
   );
 }
-
 export default App;
