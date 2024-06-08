@@ -1,0 +1,61 @@
+p {
+    margin: 0;
+  }
+  
+  header {
+    display: flex;
+    width: 100%;
+    margin-top: 3vh;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: Blinker, sans-serif;
+  }
+  
+  .Logo-Image {
+    width: 80%;
+    height: auto;
+    margin-left: 32px;
+  }
+  
+  .Link-Container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--Spacing-4xl, 40px);
+    font-size: 24px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    margin-right: 32px;
+  }
+
+  .link{
+    height: 26px;
+  }
+  
+  .ThemeSwitch-Container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ThemeSwitch-Icon {
+    height: 32px;
+    width: 32px;
+  }
+  
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .Link-Container {
+      gap: 10px;
+      font-size: 0.875rem;
+    }
+  
+    .ThemeSwitch-Icon {
+      margin-left: 10px;
+    }
+  }

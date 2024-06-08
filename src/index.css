@@ -1,68 +1,36 @@
+/*Global themes*/
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+/*CSS Variables */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background-gradient-light: linear-gradient(90deg, #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
+  --background-gradient-dark: linear-gradient(90deg, #2D3E75 0%, #554767 11%, #742850 81%, #8A5944 100%); /* Example dark theme gradient */
+ 
+  --primary-text-color-light: #1b2339;
+  --secondary-text-color-light: #3D4762;
+  
+  --primary-text-color-dark: #E6E2FF;
+  --secondary-text-color-dark: #3D4762;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Light theme */
+[data-theme="light"] {
+  --background-gradient: var(--background-gradient-light);
+  --primary-text-color: var( --primary-text-color-light);
+  --secondary-text-color: var(--secondary-text-color-light);
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  --background-gradient: var(--background-gradient-dark);
+  --primary-text-color: var( --primary-text-color-dark);
+  --secondary-text-color: var(--secondary-text-color-dark);
+}
+
+/* Apply theme variables */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  background: var(--background-gradient);
+  color: var(--primary-text-color);
+  font-family: poppins;
 }
