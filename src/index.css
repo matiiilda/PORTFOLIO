@@ -2,44 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
-/*CSS Variables */
-:root {
-  --background-gradient-light: linear-gradient(90deg, #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
-  --background-gradient-dark: linear-gradient(90deg, #2D3E75 0%, #554767 11%, #742850 81%, #8A5944 100%); /* Example dark theme gradient */
- 
-  --primary-text-color-light: #1b2339;
-  --secondary-text-color-light: #3D4762;
-  
-  --primary-text-color-dark: #E6E2FF;
-  --secondary-text-color-dark: #3D4762;
-}
-
-/* Light theme */
-[data-theme="light"] {
-  --background-gradient: var(--background-gradient-light);
-  --primary-text-color: var( --primary-text-color-light);
-  --secondary-text-color: var(--secondary-text-color-light);
-}
-
-/* Dark theme */
-[data-theme="dark"] {
-  --background-gradient: var(--background-gradient-dark);
-  --primary-text-color: var( --primary-text-color-dark);
-  --secondary-text-color: var(--secondary-text-color-dark);
-}
-
-/* Apply theme variables */
-body {
-  background: var(--background-gradient);
-  color: var(--primary-text-color);
-  font-family: poppins;
-}
-
--link:hover{
-  color: var(--secondary-text-color)
+.link{
+    color: var(--primary-text-color);
 }
 
 .link:visited{
-  text-decoration: none;
-  color: var(--primary-text-color)
+    color: var(--primary-text-color);
 }

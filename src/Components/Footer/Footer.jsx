@@ -4,7 +4,7 @@ function Footer(){
 
     return (
         <footer>
-            <p>&copy; {new Date().getFullYear()} All rights reserved. <br />Powered by coffee; Designed & built by Matilda</p>
+            <p>&copy; {new Date().getFullYear()} All rights reserved. <br />Designed & built by Matilda; Powered by coffee</p>
         </footer>
     );
 }

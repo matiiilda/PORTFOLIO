@@ -3,7 +3,7 @@ import './LandingPage.css'
 
 const LandingPage = () => {
   return (
-    <div className='container'>LandingPage</div>
+      <div className='container'>LandingPage</div>
   )
 }
 
