@@ -1,7 +1,22 @@
-Footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
+.Footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Img-Container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%; /* Adjust as needed */
+  margin-bottom: 0px;
+}
+
+.Låda-Image {
+  height: 900px; /* Adjust image size */
+  margin-bottom: 0px;
+}
+
+.Text-Container{
+  display: flex;
+  flex-direction: row;
+}
