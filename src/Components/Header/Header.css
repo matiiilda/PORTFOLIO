@@ -13,11 +13,28 @@ p {
     left: 0;
     font-family: Blinker, sans-serif;
   }
-  
+
+  header.header-scrolled {
+    background: var(--header-gradient);
+    padding-top: 1vh; /* Adjust the padding if needed */
+  }
+
+  .Link-Container.header-scrolled {
+    align-items: center;
+    align-content: center;
+    padding-bottom: 15px;
+  }
+
   .Logo-Image {
     width: 80%;
     height: auto;
     margin-left: 32px;
+  }
+  
+  .Logo-Image-Scrolled {
+    width: 50px;
+    height: auto;
+    padding: 5px;
   }
   
   .Link-Container {
@@ -57,5 +74,6 @@ p {
   
     .ThemeSwitch-Icon {
       margin-left: 10px;
+      height:26px;
     }
   }

@@ -1,3 +1,55 @@
-.container{
-    padding-top: 113px;
-}
+.AboutPage {
+    padding-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .About-text {
+    position: fixed;
+    width: 60%;
+    transform: translateY(-50%);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* Hide all containers initially */
+    transition: opacity 0.5s ease;
+  }
+  
+  .container.active {
+    opacity: 1; /* Show the active container */
+    visibility: visible; /* Show the active container */
+  }
+  
+  .horizontal-scrolling-items {
+    display: flex;
+    animation-name: infiniteScroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .horizontal-scrolling-items__item {
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  @keyframes infiniteScroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(0px - 50%)); /* Adjust as needed */
+    }
+  }
+  
