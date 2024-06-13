@@ -1,55 +1,159 @@
+:root {
+  --text-background-light: rgba(255, 255, 255, 0.7);
+  --text-background-dark: #1B2339;
+}
+
 .AboutPage {
-    padding-top: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    box-sizing: border-box;
-    position: relative;
+  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.About-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.Skills-text {
+  margin-left: 3rem;
+  margin-top: 5%;
+  padding: 15px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.Skill-list {
+  margin-bottom: 3rem;
+}
+
+.Skill-list-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Skills-text h3{
+  margin: 5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags p {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: var(--text-background-light);
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.tags.dark p {
+  background-color: var(--text-background-dark);
+}
+
+.About-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  width: 70%;
+  gap: 1rem;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.About-text p {
+  padding: 1rem;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Love-items {
+  margin-top: 5rem;
+}
+
+.Love-icon {
+  padding: 5px;
+}
+
+.horizontal-scrolling-items {
+  position: absolute;
+  display: flex;
+  font-size: 36px;
+  font-weight: 700;
+  background-color: var(--text-background-light);
+  animation-name: infiniteScroll;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  white-space: nowrap;
+}
+
+.horizontal-scrolling-items.dark {
+  background-color: var(--text-background-dark);
+}
+
+.horizontal-scrolling-items__item {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.horizontal-scrolling-items__item svg {
+  padding: 10px;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0);
   }
-  
-  .About-text {
-    position: fixed;
-    width: 60%;
-    transform: translateY(-50%);
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  to {
+    transform: translateX(calc(0px - 50%));
   }
-  
-  .container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0; /* Hide all containers initially */
-    transition: opacity 0.5s ease;
-  }
-  
-  .container.active {
-    opacity: 1; /* Show the active container */
-    visibility: visible; /* Show the active container */
-  }
-  
-  .horizontal-scrolling-items {
-    display: flex;
-    animation-name: infiniteScroll;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    white-space: nowrap; /* Prevent text wrapping */
-  }
-  
-  .horizontal-scrolling-items__item {
-    white-space: nowrap; /* Prevent text wrapping */
-  }
-  
-  @keyframes infiniteScroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(0px - 50%)); /* Adjust as needed */
-    }
-  }
-  
+}
+
+.Experience-list {
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  width: 50%;
+
+}
+
+.Experience-list-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Experience-card-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
