@@ -1,0 +1,95 @@
+p {
+    margin: 0;
+  }
+  
+  header {
+    display: flex;
+    width: 100%;
+    padding-top: 3vh;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-family: Blinker, sans-serif;
+  }
+
+  header.header-scrolled {
+    background: var(--header-gradient);
+    padding-top: 1vh; /* Adjust the padding if needed */
+  }
+
+  .Link-Container.header-scrolled {
+    align-items: center;
+    align-content: center;
+    padding-bottom: 15px;
+  }
+
+  .Logo-Image {
+    width: 80%;
+    height: auto;
+    margin-left: 32px;
+  }
+  
+  .Logo-Image-Scrolled {
+    width: 50px;
+    height: auto;
+    padding: 5px;
+  }
+
+  .Logo-Image:hover {
+    opacity:0.7;
+    filter:alpha(opacity=70); 
+  }
+  
+  .Link-Container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 50px;
+    font-size: 24px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    margin-right: 32px;
+  }
+
+  .link{
+    height: 26px;
+    text-decoration: none;
+  }
+
+  .link:hover {
+    opacity:0.7;
+    filter:alpha(opacity=70); 
+  }
+
+  .ThemeSwitch-Container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ThemeSwitch-Icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .ThemeSwitch-Icon:hover{
+    opacity:0.7;
+    filter:alpha(opacity=70); 
+  }
+  
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .Link-Container {
+      gap: 10px;
+      font-size: 0.875rem;
+    }
+  
+    .ThemeSwitch-Icon {
+      margin-left: 10px;
+      height:26px;
+    }
+  }

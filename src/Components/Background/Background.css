@@ -1,0 +1,113 @@
+/*CSS Variables */
+:root {
+    --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
+    --background-gradient-dark: linear-gradient( #2D2151 4.7%, #61437E 21.22%, #2D2151 86.25%, #AF1F38 104.53%);
+    --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
+    --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
+   
+    --primary-text-color-light: #1b2339;
+    --secondary-text-color-light: #3D4762;
+    
+    --primary-text-color-dark: #E6E2FF;
+    --secondary-text-color-dark: #3D4762;
+  }
+  
+  /* Light theme */
+  [data-theme="light"] {
+    --background-gradient: var(--background-gradient-light);
+    --header-gradient: var(--header-gradient-light);
+    --primary-text-color: var( --primary-text-color-light);
+    --secondary-text-color: var(--secondary-text-color-light);
+  }
+  
+  /* Dark theme */
+  [data-theme="dark"] {
+    --background-gradient: var(--background-gradient-dark);
+    --header-gradient: var(--header-gradient-dark);
+    --primary-text-color: var( --primary-text-color-dark);
+    --secondary-text-color: var(--secondary-text-color-dark);
+  }
+  
+  /* Apply theme variables */
+  body {
+    margin: 0;
+    background: var(--background-gradient);
+    color: var(--primary-text-color);
+    font-family: poppins;
+  }
+
+/* src/components/Background.css */
+
+/* Variables and theme settings as before... */
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--background-gradient);
+}
+
+.cloud {
+  position: absolute;
+  z-index: 0; /* Ensure clouds are behind content */
+}
+
+.cloud1 {
+  top: 4%;
+  left: 75%;
+  width: 400px;
+  height: auto;
+}
+
+.cloud2 {
+  top: 13%;
+  left: -3%;
+  width: 300px;
+  height: auto;
+}
+
+.cloud3 {
+  top: 16%;
+  left: 10%;
+  width: 600px;
+  height: auto;
+}
+
+.cloud4 {
+  top: 15%;
+  left: 65%;
+  width: 500px;
+  height: auto;
+  transform: scaleX(-1)
+}
+
+.cloud5 {
+  bottom: 33%;
+  left: 38%;
+  width: 300px;
+  height: auto;
+}
+
+.cloud6 {
+  bottom: 45%;
+  left: -5%;
+  width: 500px;
+  height: auto;
+}
+
+.cloud7 {
+  bottom: 35%;
+  left: 55%;
+  width: 500px;
+  height: auto;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
