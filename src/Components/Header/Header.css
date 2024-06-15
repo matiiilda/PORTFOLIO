@@ -37,12 +37,17 @@ p {
     height: auto;
     padding: 5px;
   }
+
+  .Logo-Image:hover {
+    opacity:0.7;
+    filter:alpha(opacity=70); 
+  }
   
   .Link-Container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: var(--Spacing-4xl, 40px);
+    gap: 50px;
     font-size: 24px;
     font-family: Poppins, sans-serif;
     font-weight: 600;
@@ -54,6 +59,16 @@ p {
     text-decoration: none;
   }
 
+  .link:hover {
+    opacity:0.7;
+    filter:alpha(opacity=70); 
+  }
+
+  .link.active {
+    color: #ff9900; /* Example: Change color for active link */
+    font-weight: bold; /* Example: Apply bold font weight to active link */
+  }
+
   .ThemeSwitch-Container {
     cursor: pointer;
     display: flex;
@@ -63,6 +78,11 @@ p {
   .ThemeSwitch-Icon {
     height: 32px;
     width: 32px;
+  }
+
+  .ThemeSwitch-Icon:hover{
+    opacity:0.7;
+    filter:alpha(opacity=70); 
   }
   
   

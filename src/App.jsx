@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import LandingPage from './Pages/LandingPage';
 import AboutPage from './Pages/AboutPage';
+import CasePage from './Pages/CasePage';
 import BackgroundWrapper from './Components/Background/BackgroundWrapper';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/case:id" element={<CasePage />} />
           </Routes>
           <Footer />
         </BackgroundWrapper>

@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from '../ThemeContext.jsx';
 import { PiStarFourFill } from "react-icons/pi";
-import { FaComputer, FaCompassDrafting  } from "react-icons/fa6";
+import { FaComputer, FaCompassDrafting } from "react-icons/fa6";
 import Lovelight from '../assets/Love-icon-light.svg';
 import Lovedark from '../assets/Love-icon-dark.svg';
 import './AboutPage.css';
@@ -13,33 +13,54 @@ const AboutPage = () => {
     "Punk-culture",
     "Painting",
     "Late evenings",
-    "Invisible design",
+    "Invisible design", 
     "Grapefruit Soju",
-    "Motion design ",
+    "Motion design",
     "Matcha",
-    "Lots of whitespace",
+    "Lots of whitespace", 
     "Cats",
     "Rounded corners",
     "Video games",
-    "Reading long books",
-    "Clean inbox",    
+    "Reading long books", 
+    "Brain-storming",
+    "Cooking",
+    "Vibrant colors"
   ];
+
+  useEffect(() => {
+    const scrollers = document.querySelectorAll(".horizontal-scrolling-items");
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+
+        const scrollerInner = scroller.querySelector(".horizontal-scrolling-items__inner");
+        const scrollerContent = Array.from(scrollerInner.children);
+
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute("aria-hidden", true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
+      });
+    }
+  }, []);
 
   return (
     <div className='AboutPage'>
-      <div className='About-section'>
+      <section className='About-section'>
       <div className='Skills-text'>
         <div className= 'Skill-list'>
           <div className='Skill-list-title'>
           <FaComputer /><h3>Proficient with</h3>
           </div>
           <div className={`tags ${isDark ? 'dark' : ''}`}>
-            <p>Figma</p>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>Javascript</p>
-            <p>React</p>
-            <p>Github</p>
+            <a href="https://www.figma.com/design/">Figma</a>
+            <a href="https://www.w3schools.com/whatis/whatis_html.asp">HTML</a>
+            <a href="https://www.w3schools.com/whatis/whatis_css.asp">CSS</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript">Javascript</a>
+            <a href="https://react.dev/">React</a>
+            <a href="https://github.com/">Github</a>
           </div>
         </div>
         <div className= 'Skill-list'>
@@ -47,54 +68,74 @@ const AboutPage = () => {
         <FaCompassDrafting /><h3>Currently learning</h3>
           </div>
           <div className={`tags ${isDark ? 'dark' : ''}`}>
-            <p>Js.node</p>
-            <p>Adobe AI</p>
-            <p>Blender</p>
-            <p>Design Principles</p>
+          <a href="https://www.w3schools.com/nodejs/nodejs_intro.asp">Node.js</a>
+          <a href="https://www.adobe.com/ai/overview.html">Adobe Ai</a>
+          <a href="https://www.blender.org/about/">Blender</a>
+
           </div>
         </div>
       </div>
-      <div className='About-text'>
-        <p>I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. Little did I know that this would be my gateway into interactive design.</p>
-        <p>My desire to help people initially led me to study orthotics and prosthetics, where I learned the importance of empathy and tailored solutions. Eventually, I discovered that this and my love for design could intertwine into a career in UX.</p>
-        <p>I find inspiration from the work of: Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham Dannaway and of course my endlessly passionated classmates.</p>
-        <p>Creativity is my driving force, propelling me to constantly explore and experiment with new ideas. I thrive on the excitement of trying out new things and pushing boundaries. I find joy in a myriad of design styles, from the simplicity of minimalism to the boldness of maximalism.</p>
-      </div>
-      </div>
+        <div className='About-text'>
+          <p>I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. Little did I know that this would be my gateway into interactive design.</p>
+          <p>My desire to help people initially led me to study orthotics and prosthetics, where I learned the importance of empathy and tailored solutions. Eventually, I discovered that this and my love for design could intertwine into a career in UX.</p>
+          <p>I find inspiration from the work of: Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham Dannaway and of course my endlessly passionate classmates.</p>
+          <p>
+          Creativity is my driving force, propelling me to constantly explore and experiment with new ideas. If there's a new tool or skillset to learn along the way, even better.  I find great joy in delving into diverse design styles, from the serene elegance of minimalism to the bold and expressive realms of maximalism. This spirit also extends into all my hobbies, where I'm always on the lookout for a new project.</p>        </div>
+      </section>
       <div className='Love-items'>
         <img 
           src={isDark ? Lovedark : Lovelight} 
           className='Love-icon'
+          alt="Love Icon"
         />
-        {/* Horizontal scrolling items */}
         <div className={`horizontal-scrolling-items ${isDark ? 'dark' : ''}`}>
-          {words.map((word, index) => (
-            <div key={index} className="horizontal-scrolling-items__item">
-              {word} <PiStarFourFill />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className='Experience-list'>
-        <div className='Experience-list-title'>
-          <h2>Experience</h2><PiStarFourFill />
-        </div>
-        <div className='Experience-card'>
-          <div className='Experience-card-header'>
-            <div className='Experience-card-header-left'>
-              <h3>Your company here</h3>
-              <h4>As your colleague</h4>
-            </div>
-            <div className='Experience-card-header-right'>
-              <h5>Anywhere with WiFi</h5>
-              <h5>AFull-time Dream Team Member</h5>
-            </div>
+          <div className="horizontal-scrolling-items__inner">
+            {words.map((word, index) => (
+              <div key={index} className="horizontal-scrolling-items__item">
+                {word} <PiStarFourFill />
+              </div>
+            ))}
           </div>
-          <p>I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was supporting the team by providing fresh perspectives and injecting creativity into our work, while absorbing all the knowledge that I could. With my genuine passion for design and a sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.</p>
         </div>
       </div>
+      <ExperienceSection />
     </div>
   );
 };
+
+const SkillList = ({ title, icon, skills, isDark }) => (
+  <div className='Skill-list'>
+    <div className='Skill-list-title'>
+      {icon}<h3>{title}</h3>
+    </div>
+    <div className={`tags ${isDark ? 'dark' : ''}`}>
+      {skills.map(skill => (
+        <a key={skill} href={`https://www.google.com/search?q=${skill}`} target="_blank" rel="noopener noreferrer">
+          {skill}
+        </a>
+      ))}
+    </div>
+  </div>
+);
+
+const ExperienceSection = () => (
+  <div className='Experience-list'>
+    <div className='Experience-list-title'>
+      <h2>Experience</h2><PiStarFourFill />
+    </div>
+    <div className='Experience-card'>
+      <div className='Experience-card-header'>
+        <div className='row'>
+          <h3>Your company here</h3>
+          <h5>Anywhere with WiFi</h5>
+        </div>
+        <div className='row'>
+          <h5>A Full-time Dream Team Member</h5>
+        </div>
+      </div>
+      <p>I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was supporting the team by providing fresh perspectives and injecting creativity into our work, while absorbing all the knowledge that I could. With my genuine passion for design and a sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.</p>
+    </div>
+  </div>
+);
 
 export default AboutPage;
