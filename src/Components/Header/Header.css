@@ -64,11 +64,6 @@ p {
     filter:alpha(opacity=70); 
   }
 
-  .link.active {
-    color: #ff9900; /* Example: Change color for active link */
-    font-weight: bold; /* Example: Apply bold font weight to active link */
-  }
-
   .ThemeSwitch-Container {
     cursor: pointer;
     display: flex;

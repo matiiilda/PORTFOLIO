@@ -10,8 +10,8 @@ const LandingPage = () => {
           <h1>Hey there, I'm Matilda!</h1>
           <h2>Welcome to my little corner of the internet.</h2>
         </div>
-        <p>I aim to create elegantly simple design with a touch of wonder. <br />
-          Design that will make the users love to use it.</p>
+        <p>I am a student at Chas Academy, studying UX/UI-design with frontend competence. <br />
+          I aim to create elegantly simple design with a touch of wonder. Design that will make the users love to use it.</p>
       </div>
       <div className='Case-section'>
         <CaseCard 
@@ -33,7 +33,7 @@ const LandingPage = () => {
         title="Simply Made"
         role="UX/UI-Design"
         typeOfProject="Team Project"
-        content="We aim to create a website for hobbyists to sell their homemade creations. More TBA"
+        content="Launching a website for hobbyists, to help them gain a customer-base and sell handcrafted items. More TBA"
         />
       </div>
     </div>

@@ -17,7 +17,7 @@ const CaseCard = ({ id, title, role, typeOfProject, content }) => {
         <div className='row'>
           <h3>{title}</h3>    
         </div>
-        <p>{content}</p>
+        <p className='content'>{content}</p>
       </div>
     </div></Link>
   );
