@@ -41,7 +41,7 @@ const Footer = forwardRef((props, ref) => {
                 </div>
             </div>
             <div className='img-container'>
-                <img src={isDark ? LådaDark : LådaLight} alt="Mailbox" className="låda-image" />
+                <img src={isDark ? LådaDark : LådaLight} className="låda-image" />
             </div>
             <div className='copyright'>
                 <p>&copy; {new Date().getFullYear()} All rights reserved. Designed & built by Matilda; Powered by coffee</p>

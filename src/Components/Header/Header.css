@@ -80,16 +80,76 @@ p {
     filter:alpha(opacity=70); 
   }
   
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .Link-Container {
-      gap: 10px;
-      font-size: 0.875rem;
-    }
-  
-    .ThemeSwitch-Icon {
-      margin-left: 10px;
-      height:26px;
-    }
+  .Hamburger-Menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
   }
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .Link-Container {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #444;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: calc(100vh - 60px);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    padding: 20px 0;
+  }
+
+  .Link-Container.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .link {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .ThemeSwitch-Container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .Logo-Container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .Logo-Image {
+    display: none;
+  }
+
+  .Logo-Image-Scrolled {
+    display: block;
+    height: 45px;
+  }
+
+  .Hamburger-Menu {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .link {
+    font-size: 1rem;
+  }
+
+  .Logo-Image-Scrolled {
+    height: 40px;
+  }
+}
