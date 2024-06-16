@@ -4,7 +4,7 @@
 }
 
 .AboutPage {
-  padding-top: 15rem;
+  padding-top: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,12 +19,11 @@
 
 .Skills-text {
   margin-left: 3rem;
-  margin-top: 5%;
-  padding: 15px;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  max-width: 450px;
 }
 
 .Skill-list {
@@ -70,9 +69,8 @@
 }
 
 .About-text {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
+  position: relative;
+  height: 20rem;
   margin-left: 5rem;
   margin-right: 5rem;
   width: 70%;
@@ -85,6 +83,13 @@
 
 .About-text p {
   padding: 1rem;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
 }
 
 .container {
@@ -216,4 +221,54 @@ font-size: 48px;
 .Experience-card p{
   padding-top: 2rem;
   font-weight: 500;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .About-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Skills-text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .About-text {
+    margin: 2rem 0;
+    width: 90%;
+    font-size: 24px;
+  }
+
+  .Experience-list {
+    padding: 10%;
+  }
+
+  .Experience-list-title {
+    font-size: 36px;
+  }
+
+  .Experience-card-header h3 {
+    font-size: 28px;
+  }
+
+  .Experience-card-header h4 {
+    font-size: 24px;
+  }
+
+  .Experience-card-header h5 {
+    font-size: 16px;
+  }
+
+  .Experience-card p {
+    font-size: 16px;
+  }
+
+  .horizontal-scrolling-items {
+    font-size: 28px;
+  }
 }

@@ -1,0 +1,87 @@
+:root {
+    --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
+    --background-gradient-dark: linear-gradient( #2D2151 4.7%, #61437E 21.22%, #2D2151 86.25%, #AF1F38 104.53%);
+    --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
+    --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
+  }
+  
+  /* Light theme */
+  [data-theme="light"] {
+    --background-gradient: var(--background-gradient-light);
+    --header-gradient: var(--header-gradient-light);
+  }
+  
+  /* Dark theme */
+  [data-theme="dark"] {
+    --background-gradient: var(--background-gradient-dark);
+    --header-gradient: var(--header-gradient-dark);
+  }
+  
+  body {
+    margin: 0;
+    background: var(--background-gradient);
+  }
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--background-gradient);
+}
+
+.cloud {
+  position: absolute;
+  z-index: 0;
+}
+
+.cloud10 {
+  top: 4%;
+  left: 75%;
+  width: 400px;
+  height: auto;
+}
+
+.cloud20 {
+  top: 5%;
+  left: -3%;
+  width: 300px;
+  height: auto;
+}
+
+.cloud30 {
+  top: 25%;
+  left: 5%;
+  width: 600px;
+  height: auto;
+}
+
+.cloud50 {
+  bottom: 33%;
+  left: 38%;
+  width: 300px;
+  height: auto;
+}
+
+.cloud60 {
+  bottom: 45%;
+  left: -5%;
+  width: 500px;
+  height: auto;
+}
+
+.cloud70 {
+  bottom: 35%;
+  left: 55%;
+  width: 500px;
+  height: auto;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

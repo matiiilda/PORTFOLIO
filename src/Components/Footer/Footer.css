@@ -128,3 +128,71 @@
   z-index: 1;
   margin: 15px;
 }
+
+
+/* Media queries for mobile view */
+@media (max-width: 768px) {
+  .text-container {
+    margin: 0px;
+    margin-bottom: 10rem;
+    align-content: center;
+    align-self: center;
+  }
+
+  .text-container h5 {
+    font-size: 1rem;
+  }
+
+  .text-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .links {
+    align-content: center;
+    align-self: center;
+    padding: 1rem;
+    z-index: 1;
+  }
+
+  .låda-image {
+    margin: 15px;
+    margin-bottom: 0px;
+    height: 250px;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-container h5 {
+    margin: 0px;
+    font-size: 0.875rem;
+    align-content: center;
+    align-self: center;
+  }
+
+  .text-container h1 {
+    font-size: 2rem;
+  }
+
+  .links {
+    align-content: center;
+    align-self: center;
+    padding: 1rem;
+    z-index: 1;
+  }
+
+  .låda-image {
+    margin: 15px;
+    margin-bottom: 0px;
+    height: 250px;
+  }
+
+  .copyright {
+    font-size: 0.625rem;
+    padding: 5px;
+  }
+}
