@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../ThemeContext.jsx';
 import { PiStarFourFill } from "react-icons/pi";
 import { FaComputer, FaCompassDrafting } from "react-icons/fa6";
@@ -8,6 +8,7 @@ import './AboutPage.css';
 
 const AboutPage = () => {
   const { isDark } = useContext(ThemeContext);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const words = [
     "Punk-culture",
@@ -46,6 +47,20 @@ const AboutPage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 150) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className='AboutPage'>
       <section className='About-section'>
@@ -76,11 +91,22 @@ const AboutPage = () => {
         </div>
       </div>
         <div className='About-text'>
-          <p>I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. Little did I know that this would be my gateway into interactive design.</p>
-          <p>My desire to help people initially led me to study orthotics and prosthetics, where I learned the importance of empathy and tailored solutions. Eventually, I discovered that this and my love for design could intertwine into a career in UX.</p>
-          <p>I find inspiration from the work of: Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham Dannaway and of course my endlessly passionate classmates.</p>
-          <p>
-          Creativity is my driving force, propelling me to constantly explore and experiment with new ideas. If there's a new tool or skillset to learn along the way, even better.  I find great joy in delving into diverse design styles, from the serene elegance of minimalism to the bold and expressive realms of maximalism. This spirit also extends into all my hobbies, where I'm always on the lookout for a new project.</p>        </div>
+        <p className={`p1 ${isScrolled ? 'hidden' : ''}`}>
+          I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. 
+          Little did I know that this would be my gateway into interactive design.</p>
+        <p className={`p1 ${isScrolled ? 'hidden' : ''}`}>
+          My desire to help people initially led me to study orthotics and prosthetics, where I 
+          learned the importance of empathy and tailored solutions. Eventually, I discovered that this 
+          and my love for design could intertwine into a career in UX.</p>
+        <p className={`p2 ${isScrolled ? '' : 'hidden'}`}>
+          I find inspiration from the work of: <br />Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
+          Dannaway and of course my endlessly passionate classmates.</p>
+        <p className={`p2 ${isScrolled ? '' : 'hidden'}`}>
+          Creativity is my driving force, propelling me to constantly explore and experiment with 
+          new ideas, and if there's a new tool or skillset I need to learn along the way, even better. I find 
+          great joy in delving into diverse design styles, from the serene elegance of minimalism 
+          to the bold and expressive realms of maximalism.</p>
+        </div>
       </section>
       <div className='Love-items'>
         <img 

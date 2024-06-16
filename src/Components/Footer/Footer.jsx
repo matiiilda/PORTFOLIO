@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from '../../ThemeContext';
 import { FaLinkedin, FaGithub, FaFigma, FaCopy  } from "react-icons/fa";
 import LådaLight from '../../assets/postlåda.svg';
 import LådaDark from '../../assets/Postlåda-dark.svg';
 import './Footer.css';
 
-function Footer() {
+const Footer = forwardRef((props, ref) => {
     const { isDark } = useContext(ThemeContext);
     const [copied, setCopied] = useState(false);
     
@@ -22,7 +22,7 @@ function Footer() {
             <div className="text-container">
                 <h5>Get in touch!</h5>
                 <h1>Send me an email</h1>
-                <div className='links'>
+                <div className='links' id='footer' ref={ref}>
                     <div className='mail' onClick={handleCopyEmail}>
                         <p className="email-text">{copied ? 'Copied!' : 'matilda@krimarc.se'}</p>
                         <FaCopy />
@@ -48,6 +48,6 @@ function Footer() {
             </div>
         </footer>
     );
-}
+});
 
 export default Footer;

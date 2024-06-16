@@ -8,7 +8,7 @@ import LogoSLight from '../../assets/logo-small-light.svg';
 import LogoSDark from '../../assets/logo-small-dark.svg';
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ footerRef }) => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -38,7 +38,9 @@ const Header = () => {
       </Link>
       <div className={`Link-Container ${isScrolled ? 'header-scrolled' : ''}`}>
         <Link to="/about" className='link'>About</Link>  
-        <p className="link">Contact</p>
+        <p className="link" onClick={() => {
+          footerRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }}>Contact</p>
         <div className='ThemeSwitch-Container' onClick={toggleTheme}>
           {isDark ? <BsCloudSunFill className='ThemeSwitch-Icon'/> : <BsFillCloudMoonFill className='ThemeSwitch-Icon'/>}
         </div>

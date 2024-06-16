@@ -13,6 +13,7 @@ const LandingPage = () => {
         <p>I am a student at Chas Academy, studying UX/UI-design with frontend competence. <br />
           I aim to create elegantly simple design with a touch of wonder. Design that will make the users love to use it.</p>
       </div>
+      <div className="scroll-down"></div>
       <div className='Case-section'>
         <CaseCard 
         id="1"
