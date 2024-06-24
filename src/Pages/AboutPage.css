@@ -115,13 +115,13 @@
 
 .Love-icon {
   padding: 5px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .horizontal-scrolling-items {
   overflow: hidden;
   max-width: 1500px;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
   background-color: var(--text-background-light);
   position: relative;

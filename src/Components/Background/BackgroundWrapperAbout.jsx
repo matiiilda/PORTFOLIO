@@ -25,8 +25,33 @@ const BackgroundWrapper = ({ children }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Load the grain.js script
+    const script = document.createElement('script');
+    script.src = '../../../public/grain.js';
+    script.onload = () => {
+      const options = {
+        "animate": false,
+        "patternWidth": 600,
+        "patternHeight": 600,
+        "grainOpacity": 0.07,
+        "grainDensity": 1,
+        "grainWidth": 0.7,
+        "grainHeight": 0.7,
+      };
+      if (window.grained) {
+        window.grained("#hero", options);
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-<div className="background-wrapper">
+<div className="background-wrapper" id="hero">
       {/* Cloud 1 */}
       <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud10" data-speed="0.3"/>
       
