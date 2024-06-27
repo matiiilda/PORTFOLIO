@@ -30,6 +30,7 @@ const BackgroundWrapper = ({ children }) => {
     const script = document.createElement('script');
     script.src = '../../../../grain.jsx';
     script.onload = () => {
+      console.log('grain.js loaded');
       const options = {
         "animate": false,
         "patternWidth": 600,
@@ -40,8 +41,15 @@ const BackgroundWrapper = ({ children }) => {
         "grainHeight": 0.7,
       };
       if (window.grained) {
+        console.log('grained function exists');
         window.grained("#hero", options);
+        console.log('grained function called successfully');
+      } else {
+        console.error('grained function not found');
       }
+    };
+    script.onerror = () => {
+      console.error('Error loading grain.js');
     };
     document.body.appendChild(script);
 
