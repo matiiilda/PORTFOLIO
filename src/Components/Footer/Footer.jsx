@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../../ThemeContext';
 import { FaLinkedin, FaGithub, FaFigma, FaCopy  } from "react-icons/fa";
 import LådaLight from '../../assets/postlåda.svg';
@@ -8,7 +8,7 @@ import './Footer.css';
 const Footer = forwardRef((props, ref) => {
     const { isDark } = useContext(ThemeContext);
     const [copied, setCopied] = useState(false);
-    
+
     const handleCopyEmail = () => {
         navigator.clipboard.writeText('matilda@krimarc.se')
             .then(() => {
@@ -17,9 +17,22 @@ const Footer = forwardRef((props, ref) => {
             });
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            document.querySelectorAll('.text-container').forEach(text => {
+                const speed = text.getAttribute('data-speed');
+                text.style.transform = `translateY(${scrollTop * speed}px)`;
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <footer className="footer">
-            <div className="text-container">
+            <div className="text-container" data-speed= "0.3">
                 <h5>Get in touch!</h5>
                 <h1>Send me an email</h1>
                 <div className='links' id='footer' ref={ref}>
