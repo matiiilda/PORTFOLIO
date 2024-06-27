@@ -1,6 +1,5 @@
 :root {
-  --primary-text-color-light: #1b2339;
-  
+  --primary-text-color-light: #1b2339;  
   --primary-text-color-dark: #E6E2FF;
 }
 
@@ -29,14 +28,16 @@
 .text-container {
   display: flex;
   flex-direction: column;
+  position: relative;
   z-index: 1;
   line-height: -5%;
   margin-left: 10rem;
-  margin-bottom: 25rem;
+  margin-bottom: 155vh;
+  font-size: 1.2rem;
 }
 
 .text-container h5{
-  font-size: 35px;
+  font-size: 2rem;
   font-weight: 300;
   margin: 0px;
   padding: 0px;
@@ -44,9 +45,9 @@
 }
 
 .text-container h1{
-  font-size: 128px;
+  font-size: 7rem;
   font-weight: 300;
-  line-height: 0.8; /* Adjusted line-height */
+  line-height: 0.8;
   margin: 0px;
   padding: 0px;
 }
@@ -63,7 +64,7 @@
 .socials {
   display: flex;
   padding-left: 30px;
-  gap: 10px; /* Add space between social icons */
+  gap: 10px;
 }
 
 .socials a {
@@ -72,15 +73,15 @@
 }
 
 .socials .a1:hover {
-  color: #0073b1; /* LinkedIn blue, you can customize this */
+  color: #0073b1; /* LinkedIn blue */
 }
 
 .socials .a2:hover {
-  color: #6e5494; /* LinkedIn blue, you can customize this */
+  color: #6e5494; /* Github purple*/
 }
 
 .socials .a3:hover {
-  color: #0acf83; /* LinkedIn blue, you can customize this */
+  color: #0acf83;
 }
 
 .mail {
@@ -106,8 +107,7 @@
 
 .email-text {
   flex: 1;
-  font-size: 32;
-  text-align: center; /* Center the text within the p element */
+  text-align: center;
 }
 
 .img-container {
@@ -118,15 +118,14 @@
 }
 
 .låda-image {
-  height: 700px;
+  height: 80vh;
   margin-left: 8rem;
 }
 
 .copyright {
-  align-self: center;
+  align-self: flex-end;
   bottom: 0;
   z-index: 1;
-  margin: 15px;
 }
 
 

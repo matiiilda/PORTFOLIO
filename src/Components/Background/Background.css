@@ -1,44 +1,44 @@
-/*CSS Variables */
+/* Variables */
+
 :root {
-    --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
-    --background-gradient-dark: linear-gradient( #24243A 4.7%, #453465 21.22%, #402B47 87.32%, #922879 104.53%);
-    --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
-    --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
-    --card-gradient-light: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.5) 15%, hsla(0, 0%, 100%, 0.5) 90%, hsla(0, 0%, 100%, 0) 100%);
-    --card-gradient-dark: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(223, 36%, 16%, 0.6) 15%, hsl(224, 36%, 16%, 0.6) 90%, hsla(0, 0%, 100%, 0) 100%);
-   
-    --primary-text-color-light: #1b2339;
-    --secondary-text-color-light: #3D4762;
-    
-    --primary-text-color-dark: #E6E2FF;
-    --secondary-text-color-dark: #3D4762;
-  }
+  --background-gradient-light: linear-gradient(#8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
+  --background-gradient-dark: linear-gradient(#24243A 4.7%, #453465 21.22%, #402B47 87.32%, #922879 104.53%);
+  --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
+  --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
+  --card-gradient-light: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.5) 15%, hsla(0, 0%, 100%, 0.5) 90%, hsla(0, 0%, 100%, 0) 100%);
+  --card-gradient-dark: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(223, 36%, 16%, 0.6) 15%, hsl(224, 36%, 16%, 0.6) 90%, hsla(0, 0%, 100%, 0) 100%);
+ 
+  --primary-text-color-light: #1b2339;
+  --secondary-text-color-light: #3D4762;
   
-  /* Light theme */
-  [data-theme="light"] {
-    --background-gradient: var(--background-gradient-light);
-    --header-gradient: var(--header-gradient-light);
-    --card-gradient: var(--card-gradient-light);
-    --primary-text-color: var( --primary-text-color-light);
-    --secondary-text-color: var(--secondary-text-color-light);
-  }
-  
-  /* Dark theme */
-  [data-theme="dark"] {
-    --background-gradient: var(--background-gradient-dark);
-    --header-gradient: var(--header-gradient-dark);
-    --card-gradient: var(--card-gradient-dark);
-    --primary-text-color: var( --primary-text-color-dark);
-    --secondary-text-color: var(--secondary-text-color-dark);
-  }
-  
-  /* Apply theme variables */
-  body {
-    margin: 0;
-    background: var(--background-gradient);
-    color: var(--primary-text-color);
-    font-family: poppins;
-  }
+  --primary-text-color-dark: #E6E2FF;
+  --secondary-text-color-dark: #3D4762;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --background-gradient: var(--background-gradient-light);
+  --header-gradient: var(--header-gradient-light);
+  --card-gradient: var(--card-gradient-light);
+  --primary-text-color: var(--primary-text-color-light);
+  --secondary-text-color: var(--secondary-text-color-light);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --background-gradient: var(--background-gradient-dark);
+  --header-gradient: var(--header-gradient-dark);
+  --card-gradient: var(--card-gradient-dark);
+  --primary-text-color: var(--primary-text-color-dark);
+  --secondary-text-color: var(--secondary-text-color-dark);
+}
+
+body {
+  margin: 0;
+  background: var(--background-gradient);
+  color: var(--primary-text-color);
+  font-family: poppins;
+}
 
 .background-wrapper {
   position: relative;
@@ -53,52 +53,53 @@
 }
 
 .cloud1 {
-  top: 4%;
-  left: 75%;
-  width: 460px;
+  top: 15vh;
+  right: 3vw;
+  width: 25vw;
+  min-width: 15vw;
   height: auto;
 }
 
 .cloud2 {
-  top: 13%;
-  left: -3%;
-  width: 300px;
+  top: 50vh;
+  left: -1.5vw;
+  width: 20vw;
   height: auto;
 }
 
 .cloud3 {
-  top: 16%;
-  left: 10%;
-  width: 600px;
+  top: 75vh;
+  left: 8vw;
+  width: 40vw;
   height: auto;
 }
 
 .cloud4 {
-  top: 15%;
-  left: 65%;
-  width: 500px;
+  top: 65vh;
+  right: 8vw;
+  width: 30vw;
   height: auto;
-  transform: scaleX(-1)
+  transform: scaleX(-1);
 }
 
 .cloud5 {
-  bottom: 20%;
+  bottom: 33%;
   left: 38%;
-  width: 300px;
+  width: 20vw;
   height: auto;
 }
 
 .cloud6 {
   bottom: 45%;
   left: -5%;
-  width: 500px;
+  width: 30vw;
   height: auto;
 }
 
 .cloud7 {
   bottom: 35%;
-  left: 55%;
-  width: 500px;
+  left: 55vw;
+  width: 36vw;
   height: auto;
 }
 
@@ -112,93 +113,63 @@
   justify-content: space-between;
 }
 
-
-
 /* Media queries for mobile view */
 @media (max-width: 768px) {
   .cloud1 {
-    top: 4%;
-    left: 70%;
-    width: 200px;
+      width: 10vw;
   }
 
   .cloud2 {
-    top: 10%;
-    left: 5%;
-    width: 150px;
+      width: 8vw;
   }
 
   .cloud3 {
-    top: 12%;
-    left: 10%;
-    width: 300px;
+      width: 16vw;
   }
 
   .cloud4 {
-    top: 12%;
-    left: 60%;
-    width: 250px;
+      width: 13vw;
   }
 
   .cloud5 {
-    bottom: 15%;
-    left: 30%;
-    width: 150px;
+      width: 8vw;
   }
 
   .cloud6 {
-    bottom: 30%;
-    left: 5%;
-    width: 250px;
+      width: 13vw;
   }
 
   .cloud7 {
-    bottom: 25%;
-    left: 50%;
-    width: 250px;
+      width: 13vw;
   }
 }
 
 @media (max-width: 480px) {
   .cloud1 {
-    top: 4%;
-    left: 60%;
-    width: 100px;
+      width: 5vw;
   }
 
   .cloud2 {
-    top: 10%;
-    left: 10%;
-    width: 75px;
+      width: 4vw;
   }
 
   .cloud3 {
-    top: 12%;
-    left: 10%;
-    width: 150px;
+      width: 8vw;
   }
 
   .cloud4 {
-    top: 12%;
-    left: 50%;
-    width: 125px;
+      width: 6.5vw;
   }
 
   .cloud5 {
-    bottom: 15%;
-    left: 25%;
-    width: 75px;
+      width: 4vw;
   }
 
   .cloud6 {
-    bottom: 30%;
-    left: 10%;
-    width: 125px;
+      width: 6.5vw;
   }
 
   .cloud7 {
-    bottom: 25%;
-    left: 45%;
-    width: 125px;
+      width: 6.5vw;
   }
 }
