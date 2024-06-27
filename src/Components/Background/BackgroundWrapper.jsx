@@ -28,7 +28,7 @@ const BackgroundWrapper = ({ children }) => {
   useEffect(() => {
     // Load the grain.js script
     const script = document.createElement('script');
-    script.src = '../../../../grain.jsx';
+    script.src = '../../../../grain.js';
     script.onload = () => {
       console.log('grain.js loaded');
       const options = {
