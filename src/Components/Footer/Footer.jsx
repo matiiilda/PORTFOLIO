@@ -17,19 +17,6 @@ const Footer = forwardRef((props, ref) => {
             });
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.pageYOffset;
-            document.querySelectorAll('.text-container').forEach(text => {
-                const speed = text.getAttribute('data-speed');
-                text.style.transform = `translateY(${scrollTop * speed}px)`;
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
         <footer className="footer">
             <div className="text-container" data-speed= "0.3">
@@ -37,8 +24,8 @@ const Footer = forwardRef((props, ref) => {
                 <h1>Send me an email</h1>
                 <div className='links' id='footer' ref={ref}>
                     <div className='mail' onClick={handleCopyEmail}>
-                        <p className="email-text">{copied ? 'Copied!' : 'matilda@krimarc.se'}</p>
                         <FaCopy />
+                        <p className="email-text">{copied ? 'Copied!' : 'matilda@krimarc.se'}</p>
                     </div>
                     <div className='socials'>
                         <a className= "a1" href="https://www.linkedin.com/in/matilda-danielsson-aa58b72a3" target="_blank" rel="noopener noreferrer">
