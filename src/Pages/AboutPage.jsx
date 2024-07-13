@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../ThemeContext.jsx';
-import { PiStarFourFill } from "react-icons/pi";
-import { FaComputer, FaCompassDrafting } from "react-icons/fa6";
+import { PiStarFourFill } from 'react-icons/pi';
+import { FaComputer, FaCompassDrafting } from 'react-icons/fa6';
+import ScrollFade from '../Components/ScrollFade.jsx'
 import Lovelight from '../assets/Love-icon-light.svg';
 import Lovedark from '../assets/Love-icon-dark.svg';
 import './AboutPage.css';
