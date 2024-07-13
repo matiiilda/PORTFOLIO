@@ -3,6 +3,7 @@ import { ThemeContext } from '../ThemeContext.jsx';
 import { PiStarFourFill } from 'react-icons/pi';
 import { FaComputer, FaCompassDrafting } from 'react-icons/fa6';
 import ScrollFade from '../Components/ScrollFade.jsx';
+import AutoFade from '../Components/AutoFade.jsx';
 import Lovelight from '../assets/Love-icon-light.svg';
 import Lovedark from '../assets/Love-icon-dark.svg';
 import './AboutPage.css';
@@ -20,11 +21,14 @@ const AboutPage = () => {
 
   useEffect(() => {
     const scrollers = document.querySelectorAll(".horizontal-scrolling-items");
+
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       scrollers.forEach((scroller) => {
         scroller.setAttribute("data-animated", true);
+
         const scrollerInner = scroller.querySelector(".horizontal-scrolling-items__inner");
         const scrollerContent = Array.from(scrollerInner.children);
+
         scrollerContent.forEach((item) => {
           const duplicatedItem = item.cloneNode(true);
           duplicatedItem.setAttribute("aria-hidden", true);
@@ -37,7 +41,11 @@ const AboutPage = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 150);
+      if (scrollPosition > 150) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -72,27 +80,31 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-        <div className='About-text'>
-          <p className={`p1 ${isScrolled ? 'hidden' : ''}`}>
+        <AutoFade className='About-text'>
+          <div className='p1'>
+          <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
             I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. 
             Little did I know that this would be my gateway into interactive design.
           </p>
-          <p className={`p1 ${isScrolled ? 'hidden' : ''}`}>
+          <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
             My desire to help people initially led me to study orthotics and prosthetics, where I 
             learned the importance of empathy and tailored solutions. Eventually, I discovered that this 
             and my love for design could intertwine into a career in UX.
           </p>
-          <p className={`p2 ${isScrolled ? '' : 'hidden'}`}>
-            I find inspiration from the work of: Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
-            Dannaway and of course my endlessly passionate classmates.
+          </div>
+          <div className='p2'>
+          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
+            I find inspiration from the work of: <br />Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
+            Dannaway and of course all of my classmates.
           </p>
-          <p className={`p2 ${isScrolled ? '' : 'hidden'}`}>
+          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
             Creativity is my driving force, propelling me to constantly explore and experiment with 
             new ideas, and if there's a new tool or skillset I need to learn along the way, even better. I find 
-            great joy in delving into diverse design styles, from the serene elegance of minimalism 
-            to the bold and expressive realms of maximalism.
+            great joy in delving into diverse design styles, from the elegance of minimalism to the bold and 
+            expressive realms of maximalism.
           </p>
-        </div>
+          </div>
+        </AutoFade>
       </section>
       <div className='Love-items'>
         <img 
@@ -125,7 +137,10 @@ const AboutPage = () => {
               </div>
             </div>
             <p>
-              I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was supporting the team by providing fresh perspectives and injecting creativity into our work, while absorbing all the knowledge that I could. With my genuine passion for design and a sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.
+              I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was 
+              supporting the team by providing fresh perspectives and injecting creativity into our work, 
+              while absorbing all the knowledge that I could. With my genuine passion for design and a 
+              sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.
             </p>
           </div>
         </div>

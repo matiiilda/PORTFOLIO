@@ -72,19 +72,23 @@
   position: relative;
   height: 20rem;
   margin-left: 5rem;
-  margin-right: 5rem;
+  margin-right: 10rem;
   width: 70%;
   gap: 1rem;
-  font-size: 30px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
+  line-height: 175%;
 }
 
 .About-text p {
   padding: 1rem;
   transition: opacity 0.5s ease-in-out;
   opacity: 1;
+}
+
+.p2{
+  margin-top: 5vh;
 }
 
 .hidden {
@@ -110,7 +114,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .Love-icon {
