@@ -2,7 +2,7 @@
 
 :root {
   --background-gradient-light: linear-gradient(#8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
-  --background-gradient-dark: linear-gradient(#24243A 4.7%, #453465 21.22%, #402B47 87.32%, #922879 104.53%);
+  --background-gradient-dark: linear-gradient(#24243A 4.7%, #453465 21.22%, #402B47 87.32%, #923f80 104.53%);
   --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
   --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
   --card-gradient-light: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.5) 15%, hsla(0, 0%, 100%, 0.5) 90%, hsla(0, 0%, 100%, 0) 100%);
