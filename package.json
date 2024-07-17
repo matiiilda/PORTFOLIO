@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "preinstall": "npm install --ignore-scripts",
-    "postinstall": "nvm install 18.20.4",
+    "preinstall": "npm install",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
