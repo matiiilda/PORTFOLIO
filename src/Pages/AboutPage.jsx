@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../ThemeContext.jsx';
 import { PiStarFourFill } from 'react-icons/pi';
 import { FaComputer, FaCompassDrafting } from 'react-icons/fa6';
+import { FaFileDownload } from "react-icons/fa";
 import ScrollFade from '../Components/ScrollFade.jsx';
 import AutoFade from '../Components/AutoFade.jsx';
+import cvPDF from '../assets/MatildaDanielssoncv.pdf';
 import Lovelight from '../assets/Love-icon-light.svg';
 import Lovedark from '../assets/Love-icon-dark.svg';
 import './AboutPage.css';
@@ -82,27 +84,27 @@ const AboutPage = () => {
         </div>
         <AutoFade className='About-text'>
           <div className='p1'>
-          <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-            I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. 
-            Little did I know that this would be my gateway into interactive design.
-          </p>
-          <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-            My desire to help people initially led me to study orthotics and prosthetics, where I 
-            learned the importance of empathy and tailored solutions. Eventually, I discovered that this 
-            and my love for design could intertwine into a career in UX.
-          </p>
+            <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
+              I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. 
+              Little did I know that this would be my gateway into interactive design.
+            </p>
+            <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
+              My desire to help people initially led me to study orthotics and prosthetics, where I 
+              learned the importance of empathy and tailored solutions. Eventually, I discovered that this 
+              and my love for design could intertwine into a career in UX.
+            </p>
           </div>
           <div className='p2'>
-          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-            I find inspiration from the work of: <br />Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
-            Dannaway and of course all of my classmates.
-          </p>
-          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-            Creativity is my driving force, propelling me to constantly explore and experiment with 
-            new ideas, and if there's a new tool or skillset I need to learn along the way, even better. I find 
-            great joy in delving into diverse design styles, from the elegance of minimalism to the bold and 
-            expressive realms of maximalism.
-          </p>
+            <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
+              I find inspiration from the work of: <br />Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
+              Dannaway and of course all of my classmates.
+            </p>
+            <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
+              Creativity is my driving force, propelling me to constantly explore and experiment with 
+              new ideas, and if there's a new tool or skillset I need to learn along the way, even better. I find 
+              great joy in delving into diverse design styles, from the elegance of minimalism to the bold and 
+              expressive realms of maximalism.
+            </p>
           </div>
         </AutoFade>
       </section>
@@ -124,7 +126,7 @@ const AboutPage = () => {
       <ScrollFade>
         <div className='Experience-list'>
           <div className='Experience-list-title'>
-            <PiStarFourFill /><h2>Experience</h2>
+            <h2>Experience</h2><PiStarFourFill />
           </div>
           <div className='Experience-card'>
             <div className='Experience-card-header'>
@@ -143,6 +145,12 @@ const AboutPage = () => {
               sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.
             </p>
           </div>
+          <a href={cvPDF} download="MatildaCV" target='_blank'>
+            <button className="cv-button">
+              <FaFileDownload />
+              <p>Download CV</p>
+            </button>
+          </a>
         </div>
       </ScrollFade>
     </div>

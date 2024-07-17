@@ -52,7 +52,6 @@
 .Case-card {
   display: flex;
   flex-direction: row;
-  border-radius: 0.5rem;
   overflow: hidden;
   margin: 1.25rem;
   width: 100%;
@@ -61,8 +60,7 @@
 }
 
 .Case-card:hover {
-  border: #f0f0f0 solid 2px;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 a {
@@ -78,6 +76,7 @@ a:visited {
 .Case-image {
   width: 43.75rem;
   height: 31.25rem;
+  border-radius: 0.5rem;
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;

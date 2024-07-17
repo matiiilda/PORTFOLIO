@@ -175,8 +175,8 @@
 }
 
 .Experience-list {
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   padding: 20%;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -231,7 +231,36 @@ font-size: 48px;
   font-weight: 500;
 }
 
+.Experience-list a{
+  margin-top: 5vh;
+  align-self: center;
+}
 
+.cv-button {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: var(--primary-text-color);
+  border: 2px solid var(--primary-text-color);
+  border-radius: 30px;
+  text-align: center;
+  width: 12vw;
+  font-size: 1.4rem;
+  background-color: transparent;
+}
+
+.cv-button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.cv-button p {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

@@ -1,4 +1,5 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { Component, forwardRef, useContext, useState } from 'react';
+import { Element } from 'react-scroll';
 import { ThemeContext } from '../../ThemeContext';
 import { FaLinkedin, FaGithub, FaFigma, FaCopy } from "react-icons/fa";
 import LådaLight from '../../assets/postlåda.svg';
@@ -6,7 +7,7 @@ import LådaDark from '../../assets/Postlåda-dark.svg';
 import ScrollFade from '../ScrollFade';
 import './Footer.css';
 
-const Footer = forwardRef((props, ref) => {
+const Footer = forwardRef((props) => {
     const { isDark } = useContext(ThemeContext);
     const [copied, setCopied] = useState(false);
 
@@ -19,11 +20,11 @@ const Footer = forwardRef((props, ref) => {
     };
 
     return (
-        <footer className="footer">
+        <Element id= "footer" name= 'footer'>
             <ScrollFade className="text-container">
                 <h5>Get in touch!</h5>
                 <h1>Send me an email</h1>
-                <div className='links' id='footer' ref={ref}>
+                <div className='links'>
                     <div className='mail' onClick={handleCopyEmail}>
                         <FaCopy />
                         <p className="email-text">{copied ? 'Copied!' : 'matilda@krimarc.se'}</p>
@@ -47,7 +48,7 @@ const Footer = forwardRef((props, ref) => {
             <div className='copyright'>
                 <p>&copy; {new Date().getFullYear()} All rights reserved. Designed & built by Matilda; Powered by coffee</p>
             </div>
-        </footer>
+        </Element>
     );
 });
 
