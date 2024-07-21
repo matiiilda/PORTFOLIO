@@ -29,16 +29,16 @@ const BackgroundWrapper = ({ children }) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'module';
-    script.src = '../../../../grain.js';
+    script.src = '/grain.js';
     script.onload = () => {
       const options = {
-        animate: false,
-        patternWidth: 600,
-        patternHeight: 600,
-        grainOpacity: 0.07,
-        grainDensity: 1,
-        grainWidth: 0.7,
-        grainHeight: 0.7,
+        "animate": false,
+        "patternWidth": 600,
+        "patternHeight": 600,
+        "grainOpacity": 0.07,
+        "grainDensity": 1,
+        "grainWidth": 0.7,
+        "grainHeight": 0.7,
       };
       if (window.grained) {
         window.grained("#hero", options);
@@ -55,17 +55,6 @@ const BackgroundWrapper = ({ children }) => {
       document.body.removeChild(script);
     };
   }, []);
-
-  const svgUrls = [
-    isDark ? Cloud1D : Cloud1L,
-    isDark ? Cloud2D : Cloud2L,
-    isDark ? Cloud3D : Cloud3L,
-    isDark ? Cloud1D : Cloud1L,
-    isDark ? Cloud2D : Cloud2L,
-    isDark ? Cloud3D : Cloud3L,
-    isDark ? Cloud2D : Cloud2L,
-    isDark ? Cloud1D : Cloud1L,
-  ];
 
   return (
       <div className="background-wrapper" id="hero">

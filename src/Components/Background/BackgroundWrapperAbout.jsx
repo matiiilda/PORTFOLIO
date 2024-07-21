@@ -30,7 +30,7 @@ const BackgroundWrapper = ({ children }) => {
     // Load the grain.js script
     const script = document.createElement('script');
     script.type = 'module';
-    script.src = '../../../../grain.js';
+    script.src = '/grain.js';
     script.onload = () => {
       const options = {
         "animate": false,
@@ -51,15 +51,6 @@ const BackgroundWrapper = ({ children }) => {
       document.body.removeChild(script);
     };
   }, []);
-
-  const svgUrls = [
-    isDark ? Cloud1D : Cloud1L,
-    isDark ? Cloud2D : Cloud2L,
-    isDark ? Cloud3D : Cloud3L,
-    isDark ? Cloud1D : Cloud1L,
-    isDark ? Cloud2D : Cloud2L,
-    isDark ? Cloud3D : Cloud3L,
-  ];
 
   return (
       <div className="background-wrapper" id="hero">
