@@ -1,34 +1,3 @@
-:root {
-    --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
-    --background-gradient-dark: linear-gradient( #2D2151 4.7%, #6D4174 21.22%, #33274d 86.25%, #923f80 104.53%);
-    --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
-    --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
-  }
-  
-  /* Light theme */
-  [data-theme="light"] {
-    --background-gradient: var(--background-gradient-light);
-    --header-gradient: var(--header-gradient-light);
-  }
-  
-  /* Dark theme */
-  [data-theme="dark"] {
-    --background-gradient: var(--background-gradient-dark);
-    --header-gradient: var(--header-gradient-dark);
-  }
-  
-  body {
-    margin: 0;
-    background: var(--background-gradient);
-  }
-
-.background-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: var(--background-gradient);
-}
-
 .cloud {
   position: absolute;
   z-index: 0;
@@ -74,14 +43,4 @@
   left: 55%;
   width: 500px;
   height: auto;
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }

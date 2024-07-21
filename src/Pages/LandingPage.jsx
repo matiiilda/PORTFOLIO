@@ -11,7 +11,7 @@ const LandingPage = () => {
           <h2>Welcome to my little corner of the internet.</h2>
         </div>
         <p>I am a student at Chas Academy, studying UX/UI-design with frontend competence. <br />
-          I aim to create elegantly simple design with a touch of wonder. Design that will make the users love to use it.</p>
+          I aim to create elegant and simple design with  a little touch of wonder. Design that will make users love to use it.</p>
       </div>
       <div className='Case-section'>
         <CaseCard 

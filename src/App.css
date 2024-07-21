@@ -20,13 +20,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color)
-}
 
-body{
-  background-color: var(--background-color);
-}
-
-h1, h2{
-  color: var(--primary-text-color)
 }

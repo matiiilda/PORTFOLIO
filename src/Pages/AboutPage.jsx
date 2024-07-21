@@ -66,7 +66,7 @@ const AboutPage = () => {
               <a href="https://www.figma.com/design/" target="_blank" rel="noopener noreferrer">Figma</a>
               <a href="https://www.w3schools.com/whatis/whatis_html.asp" target="_blank" rel="noopener noreferrer">HTML</a>
               <a href="https://www.w3schools.com/whatis/whatis_css.asp" target="_blank" rel="noopener noreferrer">CSS</a>
-              <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener noreferrer">Javascript</a>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a>
               <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
               <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
@@ -89,21 +89,19 @@ const AboutPage = () => {
               Little did I know that this would be my gateway into interactive design.
             </p>
             <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-              My desire to help people initially led me to study orthotics and prosthetics, where I 
-              learned the importance of empathy and tailored solutions. Eventually, I discovered that this 
+              Before UX I studied orthotics and prosthetics, during which I 
+              learned the importance of empathy and tailored solutions. Eventually, I discovered that my wish for helping people
               and my love for design could intertwine into a career in UX.
             </p>
           </div>
           <div className='p2'>
             <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
               I find inspiration from the work of: <br />Robert Kurvitz, Juxtopposed, Masayoshi Sutoh, Adham 
-              Dannaway and of course all of my classmates.
+              Dannaway, <br />and of course all of my classmates.
             </p>
             <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-              Creativity is my driving force, propelling me to constantly explore and experiment with 
-              new ideas, and if there's a new tool or skillset I need to learn along the way, even better. I find 
-              great joy in delving into diverse design styles, from the elegance of minimalism to the bold and 
-              expressive realms of maximalism.
+              Creativity is my main driving force; I love exploring and experimenting with new ideas, and if 
+              there's a new tool or skillset I need to learn along the way, even better.
             </p>
           </div>
         </AutoFade>
@@ -134,8 +132,8 @@ const AboutPage = () => {
                 <h3>Your company here</h3>
               </div>
               <div className='row'>
-                <h5>A Full-time Dream Team Member</h5>
-                <h5>Anywhere with WiFi</h5>
+                <h5>Full-time Dream Team Member</h5>
+                <h5>Location: Anywhere with WiFi</h5>
               </div>
             </div>
             <p>

@@ -6,6 +6,7 @@ import Cloud3L from '../../assets/cloud3-light.svg';
 import Cloud1D from '../../assets/cloud1-dark.svg';
 import Cloud2D from '../../assets/cloud2-dark.svg';
 import Cloud3D from '../../assets/cloud3-dark.svg';
+import './Background.css';
 import './BackgroundWrapperAbout.css';
 
 const BackgroundWrapper = ({ children }) => {
@@ -16,8 +17,8 @@ const BackgroundWrapper = ({ children }) => {
       const scrollTop = window.pageYOffset;
       document.querySelectorAll('.cloud').forEach(cloud => {
         const speed = cloud.getAttribute('data-speed');
-        const scaleTransform = cloud.classList.contains('cloud4') ? 'scaleX(-1)' : ''; // added to keep the mirroring
-        cloud.style.transform = `translateY(${scrollTop * speed}px) ${scaleTransform}`;
+        const scaleTransform = cloud.classList.contains('cloud4') ? ' scaleX(-1)' : ''; // added to keep the mirroring
+        cloud.style.transform = `translateY(${scrollTop * speed}px)${scaleTransform}`;
       });
     };
 
@@ -28,6 +29,7 @@ const BackgroundWrapper = ({ children }) => {
   useEffect(() => {
     // Load the grain.js script
     const script = document.createElement('script');
+    script.type = 'module';
     script.src = '../../../../grain.js';
     script.onload = () => {
       const options = {
@@ -50,32 +52,40 @@ const BackgroundWrapper = ({ children }) => {
     };
   }, []);
 
+  const svgUrls = [
+    isDark ? Cloud1D : Cloud1L,
+    isDark ? Cloud2D : Cloud2L,
+    isDark ? Cloud3D : Cloud3L,
+    isDark ? Cloud1D : Cloud1L,
+    isDark ? Cloud2D : Cloud2L,
+    isDark ? Cloud3D : Cloud3L,
+  ];
+
   return (
-<div className="background-wrapper" id="hero">
-      {/* Cloud 1 */}
-      <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud10" data-speed="0.3"/>
-      
-      {/* Cloud 2 */}
-      <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud20" data-speed="0.4"/>
-      
-      {/* Cloud 3 */}
-      <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud30" data-speed="0.4"/>
+      <div className="background-wrapper" id="hero">
+        {/* Cloud 1 */}
+        <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud10" data-speed="0.3"/>
+        
+        {/* Cloud 2 */}
+        <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud20" data-speed="0.4"/>
+        
+        {/* Cloud 3 */}
+        <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud30" data-speed="0.4"/>
 
-      {/* Cloud 5 */}
-      <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud50" data-speed="0.3"/>
+        {/* Cloud 5 */}
+        <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud50" data-speed="0.3"/>
 
-      {/* Cloud 6 */}
-      <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud60" data-speed="0.4"/>
+        {/* Cloud 6 */}
+        <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud60" data-speed="0.4"/>
 
-      {/* Cloud 7 */}
-      <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud70" data-speed="0.4"/>
+        {/* Cloud 7 */}
+        <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud70" data-speed="0.4"/>
 
-      <div className="content-wrapper">
-        {children}
+        <div className="content-wrapper">
+          {children}
+        </div>
       </div>
-    </div>
   );
 };
-
 
 export default BackgroundWrapper;

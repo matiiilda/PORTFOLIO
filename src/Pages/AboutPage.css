@@ -19,11 +19,7 @@
 
 .Skills-text {
   margin-left: 3rem;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .Skill-list {
@@ -36,33 +32,35 @@
   align-items: center;
 }
 
-.Skills-text h3{
+.Skills-text h3 {
   margin: 5px;
 }
 
 .tags {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  max-width: 18vw;
   gap: 10px;
 }
 
 .tags a {
-  font-size: 20px;
+  font-size: 1em;
   font-weight: 500;
   text-decoration: none;
   background-color: var(--text-background-light);
   padding: 10px 15px;
   border-radius: 15px;
-  display: inline-block;
 }
 
-.tags a:hover{
+.tags a:hover {
   transform: scale(1.05);
 }
 
-.tags a:visited{
+.tags a:visited {
   color: inherit;
 }
+
 
 .tags.dark a {
   background-color: var(--text-background-dark);
@@ -73,12 +71,12 @@
   height: 20rem;
   margin-left: 5rem;
   margin-right: 10rem;
-  width: 70%;
+  width: 60%;
   gap: 1rem;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 175%;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -1px;
 }
 
 .About-text p {
@@ -114,7 +112,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 20rem;
 }
 
 .Love-icon {
@@ -260,6 +258,41 @@ font-size: 48px;
   flex: 1;
   text-align: center;
   margin: 0;
+}
+
+/* Larger screen adjustments */
+@media (min-width: 2000px) {
+  .Skills-text {
+    font-size: 1.2em;
+  }
+
+  .About-text {
+    font-size: 1.8rem;
+  }
+
+  .Experience-list-title {
+    font-size: 52px;
+  }
+
+  .Experience-card-header h3 {
+    font-size: 38px;
+  }
+
+  .Experience-card-header h4 {
+    font-size: 34px;
+  }
+
+  .Experience-card-header h5 {
+    font-size: 18px;
+  }
+
+  .Experience-card p {
+    font-size: 18px;
+  }
+
+  .horizontal-scrolling-items {
+    font-size: 1.4rem;
+  }
 }
 
 /* Responsive adjustments */
