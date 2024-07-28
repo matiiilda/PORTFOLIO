@@ -7,7 +7,7 @@ const LandingPage = () => {
     <div className='landing-page'>
       <div className='Hero-container'>
         <div className='Intro-title'>
-          <h1>Hey there, I'm Matilda!</h1>
+          <h1>Hey there, I'm <i>Matilda!</i></h1>
           <h2>Welcome to my little corner of the internet.</h2>
         </div>
         <p>I am a student at Chas Academy, studying UX/UI-design with frontend competence. <br />

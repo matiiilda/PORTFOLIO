@@ -130,30 +130,45 @@ body {
 /* Media queries for mobile view */
 @media (max-width: 768px) {
   .cloud1 {
-      width: 50vw;
+    top: 10vh;
+    right: 3vw;
+    width: 55vw;
   }
-
+  
   .cloud2 {
-      width: 8vw;
+    top: 50vh;
+    left: -10vw;
+    width: 80vw;
   }
-
+  
   .cloud3 {
-      width: 16vw;
+display: none;
   }
-
+  
   .cloud4 {
-      width: 13vw;
+    top: 68vh;
+    right: 8vw;
+    width: 70vw;
+    transform: scaleX(-1);
   }
-
+  
   .cloud5 {
-      width: 8vw;
+    bottom: 22%;
+    left: 38%;
+    width: 90vw;
   }
-
+  
   .cloud6 {
-      width: 13vw;
+    bottom: 45%;
+    left: -5%;
+    width: 50vw;
+    height: auto;
   }
-
+  
   .cloud7 {
-      width: 13vw;
+    bottom: 40%;
+    left: 38%;
+    width: 70vw;
+    height: auto;
   }
 }
