@@ -114,38 +114,51 @@ a:visited {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .Hero-container {
-    padding: 4rem;
-    padding-top: 10rem;
+    padding: 0;
+    padding-top: 15vh;
     align-items: center;
     text-align: center;
+    width: auto;
   }
 
   .Hero-container p {
-    font-size: 1.25rem;
+    padding: 0.88rem;
+    font-size: 0.8rem;
+    text-align: left;
   }
 
   .Intro-title h1 {
-    font-size: 3rem;
+    font-size: 1.7rem;
   }
 
   .Intro-title h2 {
-    font-size: 2rem;
+    font-size: 0.9rem;
   }
-}
 
-@media (max-width: 768px) {
+  .Case-section{
+    margin-top: 15vh;
+    padding: 1.5rem;
+  }
+
   .Case-card {
     flex-direction: column;
     width: auto;
+  }
+
+  .Case-card h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .Case-card p{
+    font-size: 0.8rem;
   }
 
   .Case-image {
     width: 100%;
     height: auto;
   }
-}
 
-@media (max-width: 768px) {
   .Case-card-text {
     width: auto;
     padding: 0.625rem;
