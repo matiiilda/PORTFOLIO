@@ -14,38 +14,64 @@ const Header = () => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Initialize based on window size
 
+  const handleMenuToggle = () => { // Toggle for hamburger menu in mobile view
+    const newMenuOpenState = !isMenuOpen;
+    setIsMenuOpen(newMenuOpenState);
+    if (newMenuOpenState) {
+      setIsScrolled(true);
+    } else {
+      if (window.scrollY < 50) {
+        setIsScrolled(false);
+      }
+    }
+  };
+
+  const scrollToTop = () => { // Instantaneous scroll, used for changing pages
+    window.scrollTo({ top: 0, behavior: 'auto' }); 
+  };
+
+  const scrollToBottom = () => { // Smooth scroll to bottom, used only for contact link
+    scroll.scrollToBottom({ duration: 700, smooth: 'easeInOutQuad' }); 
+  };
+
+  // Toggles the visual on the header depending on scroll position and/if menu is open
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => { 
       if (window.scrollY > 50) {
         setIsScrolled(true);
-      } else {
+      } else if (!isMenuOpen) {
         setIsScrolled(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
+
+  // Checks if user is on mobile or not, used for conditional rendering
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  }
+  
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    // Initial check
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' }); // Instantaneous scroll
-  };
-
-  const scrollToBottom = () => {
-    scroll.scrollToBottom({ duration: 700, smooth: 'easeInOutQuad' }); // Smooth scroll to bottom
-  };
 
   return (
     <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <Link to="/" onClick={scrollToTop}>
         <div className='Logo-Container'>
           <img 
-            src={isDark ? (isScrolled ? LogoSDark : LogoDark) : (isScrolled ? LogoSLight : LogoLight)} 
+            src={
+              isMobile 
+                ? (isDark ? LogoSDark : LogoSLight) 
+                : (isDark ? (isScrolled ? LogoSDark : LogoDark) : (isScrolled ? LogoSLight : LogoLight))
+            } 
             alt="Logo" 
             className={`Logo-Image ${isScrolled ? 'Logo-Image-Scrolled' : ''}`}
           />

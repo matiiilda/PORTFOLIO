@@ -1,18 +1,18 @@
 :root {
   --primary-text-color-light: #1b2339;  
   --primary-text-color-dark: #E6E2FF;
+  --base-font-size: 16px;
 }
 
 /* Light theme */
 [data-theme="light"] {
-  --primary-text-color: var( --primary-text-color-light);
+  --primary-text-color: var(--primary-text-color-light);
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --primary-text-color: var( --primary-text-color-dark);
+  --primary-text-color: var(--primary-text-color-dark);
 }
-
 
 #footer {
   position: relative;
@@ -33,25 +33,25 @@
   line-height: -5%;
   margin-left: 10rem;
   margin-bottom: 52vh;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   overflow: hidden;
   opacity: 0;
 }
 
-.text-container h5{
-  font-size: 2rem;
+.text-container h5 {
+  font-size: 2em;
   font-weight: 300;
-  margin: 0px;
-  padding: 0px;
-  padding-left: 15px;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.9375em; /* 15px / 16px */
 }
 
-.text-container h1{
-  font-size: 7rem;
+.text-container h1 {
+  font-size: 7em;
   font-weight: 300;
   line-height: 0.8;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .links {
@@ -65,8 +65,8 @@
 
 .socials {
   display: flex;
-  padding-left: 30px;
-  gap: 10px;
+  padding-left: 1.875em; /* 30px / 16px */
+  gap: 0.625em; /* 10px / 16px */
 }
 
 .socials a {
@@ -79,25 +79,25 @@
 }
 
 .socials .a2:hover {
-  color: #6e5494; /* Github purple*/
+  color: #6e5494; /* Github purple */
 }
 
 .socials .a3:hover {
-  color: #0acf83;
+  color: #0acf83; /* Figma green */
 }
 
 .mail {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin: 10px;
+  padding: 0.625em; /* 10px / 16px */
+  padding-top: 0.3125em; /* 5px / 16px */
+  padding-bottom: 0.3125em; /* 5px / 16px */
+  margin: 0.625em; /* 10px / 16px */
   border: 2px solid var(--primary-text-color);
-  border-radius: 30px;
+  border-radius: 1.875em; /* 30px / 16px */
   text-align: center;
-  gap: 5px;
+  gap: 0.3125em; /* 5px / 16px */
   width: 12vw;
   transition: border-color 0.3s ease-in-out; 
 }
@@ -127,72 +127,55 @@
   align-self: flex-end;
   bottom: 0;
   z-index: 1;
+  font-size: 0.875em; /* approximately 14px */
 }
-
 
 /* Media queries for mobile view */
 @media (max-width: 768px) {
+  #footer {
+    padding: 0.3125em; /* 5px / 16px */
+    height: 60vh;
+  }
+
   .text-container {
-    margin: 0px;
-    margin-bottom: 10rem;
-    align-content: center;
+    margin: 0;
+    margin-bottom: 13vh;
+    align-items: flex-start;
     align-self: center;
   }
 
   .text-container h5 {
-    font-size: 1rem;
+    display: none;
   }
 
   .text-container h1 {
-    font-size: 2.5rem;
+    font-size: 1.8em;
+  }
+
+  .mail {
+    display: flex;
+    align-self: flex-end;
+    width: auto;
+    font-size: 0.75em;
+    margin: 0.5em;
+    margin-top: 2em;
+    margin-right: 0;
+    padding: 0.1875em;
   }
 
   .links {
-    align-content: center;
-    align-self: center;
-    padding: 1rem;
     z-index: 1;
+    padding: 0;
   }
 
   .låda-image {
-    margin: 15px;
-    margin-bottom: 0px;
-    height: 250px;
+    margin: 0.9375em;
+    margin-bottom: 0;
+    height: 28vh;
   }
 
   .copyright {
-    font-size: 0.75rem;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-container h5 {
-    margin: 0px;
-    font-size: 0.875rem;
-    align-content: center;
-    align-self: center;
-  }
-
-  .text-container h1 {
-    font-size: 2rem;
-  }
-
-  .links {
-    align-content: center;
-    align-self: center;
-    padding: 1rem;
-    z-index: 1;
-  }
-
-  .låda-image {
-    margin: 15px;
-    margin-bottom: 0px;
-    height: 250px;
-  }
-
-  .copyright {
-    font-size: 0.625rem;
-    padding: 5px;
+    font-size: 0.65em;
+    padding: 0.3125em;
   }
 }

@@ -4,6 +4,8 @@
   --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
   --background-gradient-dark: linear-gradient( #2D2151 4.7%, #6D4174 21.22%, #33274d 86.25%, #923f80 104.53%);
   --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
+  --header-menu-light: #9FAAE0;
+  --header-menu-dark: #271C44;
   --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
   --card-gradient-light: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.5) 15%, hsla(0, 0%, 100%, 0.5) 90%, hsla(0, 0%, 100%, 0) 100%);
   --card-gradient-dark: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(223, 36%, 16%, 0.6) 15%, hsl(224, 36%, 16%, 0.6) 90%, hsla(0, 0%, 100%, 0) 100%);
@@ -19,6 +21,7 @@
 [data-theme="light"] {
   --background-gradient: var(--background-gradient-light);
   --header-gradient: var(--header-gradient-light);
+  --header-menu: var(--header-menu-light);
   --card-gradient: var(--card-gradient-light);
   --primary-text-color: var(--primary-text-color-light);
   --secondary-text-color: var(--secondary-text-color-light);
@@ -28,6 +31,7 @@
 [data-theme="dark"] {
   --background-gradient: var(--background-gradient-dark);
   --header-gradient: var(--header-gradient-dark);
+  --header-menu: var(--header-menu-dark);
   --card-gradient: var(--card-gradient-dark);
   --primary-text-color: var(--primary-text-color-dark);
   --secondary-text-color: var(--secondary-text-color-dark);
@@ -126,7 +130,7 @@ body {
 /* Media queries for mobile view */
 @media (max-width: 768px) {
   .cloud1 {
-      width: 10vw;
+      width: 50vw;
   }
 
   .cloud2 {
@@ -151,35 +155,5 @@ body {
 
   .cloud7 {
       width: 13vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .cloud1 {
-      width: 5vw;
-  }
-
-  .cloud2 {
-      width: 4vw;
-  }
-
-  .cloud3 {
-      width: 8vw;
-  }
-
-  .cloud4 {
-      width: 6.5vw;
-  }
-
-  .cloud5 {
-      width: 4vw;
-  }
-
-  .cloud6 {
-      width: 6.5vw;
-  }
-
-  .cloud7 {
-      width: 6.5vw;
   }
 }
