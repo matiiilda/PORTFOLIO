@@ -114,30 +114,34 @@ a:visited {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .Hero-container {
-    padding: 0;
+    padding: 1rem;
     padding-top: 15vh;
     align-items: center;
     text-align: center;
     width: auto;
   }
 
-  .Hero-container p {
-    padding: 0.88rem;
-    font-size: 0.8rem;
+  .Intro-title h1 {
+    font-size: 3.1rem;
+    line-height: 105%;
     text-align: left;
   }
 
-  .Intro-title h1 {
-    font-size: 1.7rem;
+  .Intro-title h2 {
+    font-size: 1.5rem;
+    text-align: left;
   }
 
-  .Intro-title h2 {
-    font-size: 0.9rem;
+  .Hero-container p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: left;
   }
 
   .Case-section{
     margin-top: 15vh;
     padding: 1.5rem;
+    gap: 3rem;
   }
 
   .Case-card {
@@ -147,11 +151,20 @@ a:visited {
 
   .Case-card h3{
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.3rem;
   }
 
   .Case-card p{
     font-size: 0.8rem;
+  }
+
+  .Case-card-text .row{
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .Case-card-text .row p{
+    padding: 0;
   }
 
   .Case-image {
