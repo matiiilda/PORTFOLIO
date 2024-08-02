@@ -4,16 +4,16 @@
   --base-font-size: 16px;
 }
 
-/* Light theme */
+/* Theme Settings */
 [data-theme="light"] {
   --primary-text-color: var(--primary-text-color-light);
 }
 
-/* Dark theme */
 [data-theme="dark"] {
   --primary-text-color: var(--primary-text-color-dark);
 }
 
+/* Footer Container */
 #footer {
   position: relative;
   display: flex;
@@ -22,9 +22,10 @@
   justify-content: flex-end;
   height: 100vh;
   margin-top: auto;
-  padding: 2rem; 
+  padding: 2rem;
 }
 
+/* Text Container */
 .text-container {
   display: flex;
   flex-direction: column;
@@ -54,6 +55,7 @@
   padding: 0;
 }
 
+/* Links Container */
 .links {
   display: flex;
   flex-direction: column;
@@ -63,29 +65,7 @@
   z-index: 1;
 }
 
-.socials {
-  display: flex;
-  padding-left: 1.875em;
-  gap: 0.625em;
-}
-
-.socials a {
-  color: inherit;
-  transition: color 0.3s;
-}
-
-.socials .a1:hover {
-  color: #0073b1; /* LinkedIn blue */
-}
-
-.socials .a2:hover {
-  color: #6e5494; /* Github purple */
-}
-
-.socials .a3:hover {
-  color: #0acf83; /* Figma green */
-}
-
+/* Mail Contact */
 .mail {
   display: flex;
   align-items: center;
@@ -98,22 +78,50 @@
   border-radius: 1.875em;
   text-align: center;
   gap: 0.3125em;
-  transition: border-color 0.3s ease-in-out; 
+  transition: border-color 0.3s ease-in-out;
 }
 
-.mail p{
+.mail p {
   padding-right: 5px;
+  margin: 0;
 }
 
 .mail:hover {
   opacity: 0.7;
 }
 
+/* Email Text */
 .email-text {
   flex: 1;
   text-align: center;
 }
 
+/* Socials Container */
+.socials {
+  display: flex;
+  padding-left: 1.875em;
+  gap: 0.625em;
+}
+
+/* Social Media Links */
+.socials a {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.socials .a1:hover {
+  color: #0073b1;
+}
+
+.socials .a2:hover {
+  color: #6e5494;
+}
+
+.socials .a3:hover {
+  color: #0acf83;
+}
+
+/* Image Container */
 .img-container {
   position: absolute;
   bottom: 0;
@@ -121,11 +129,13 @@
   z-index: 0;
 }
 
+/* Mail Box Image */
 .låda-image {
   height: 80vh;
   margin-left: 8rem;
 }
 
+/* Copyright */
 .copyright {
   align-self: flex-end;
   bottom: 0;
@@ -133,7 +143,7 @@
   font-size: 0.875em;
 }
 
-/* Media queries for mobile view */
+/* Media Queries */
 @media (max-width: 768px) {
   #footer {
     padding: 0.3125em;
@@ -164,6 +174,7 @@
     margin-top: 2em;
     margin-right: 0;
     padding: 0.1875em;
+    gap: 0;
   }
 
   .links {
@@ -180,5 +191,10 @@
   .copyright {
     font-size: 0.65em;
     padding: 0.3125em;
+  }
+
+  svg .icon {
+    width: 24px;
+    height: 24px;
   }
 }

@@ -1,3 +1,4 @@
+/* General styling for landing page */
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -5,28 +6,31 @@
   box-sizing: border-box;
 }
 
-    .Hero-container {
-      padding-top: 33vh;
-      padding-left: 42vw;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2vw;
-      box-sizing: border-box;
-      width: 90vw;
-    }
+/* Container for the hero section */
+.Hero-container {
+  padding-top: 33vh;
+  padding-left: 42vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2vw;
+  box-sizing: border-box;
+  width: 90vw;
+}
 
-    .Intro-title h1 {
-      padding: 0;
-      margin: 0;
-    }
+/* Intro title styles */
+.Intro-title h1 {
+  padding: 0;
+  margin: 0;
+}
 
-    .Intro-title h2 {
-      line-height: 90%;
-      padding: 0;
-      margin: 0;
-    }
+.Intro-title h2 {
+  line-height: 90%;
+  padding: 0;
+  margin: 0;
+}
 
+/* Section for case studies */
 .Case-section {
   margin-top: 50vh;
   display: flex;
@@ -37,67 +41,73 @@
   gap: 2.5rem;
 }
 
-    .Case-card {
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-      margin: 1.25rem;
-      width: 100%;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
+/* Styles for each case card */
+.Case-card {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin: 1.25rem;
+  width: 100%;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
 
-    .Case-card:hover {
-      transform: scale(1.05);
-    }
+.Case-card:hover {
+  transform: scale(1.05);
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* Link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    a:visited {
-      color: inherit;
-      text-decoration: none;
-    }
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 
-    .Case-image {
-      width: 43.75rem;
-      height: 31.25rem;
-      border-radius: 0.5rem;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* Styles for the case image */
+.Case-image {
+  width: 43.75rem;
+  height: 31.25rem;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .Case-card-text {
-      width: 25rem;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+/* Styles for case card text */
+.Case-card-text {
+  width: 25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-    .Case-card-text .row {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      font-weight: 700;
-    }
+.Case-card-text .row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-weight: 700;
+}
 
-    .Case-card-text .row p {
-      padding-left: 0.3em;
-      padding-right: 0.3em;
-    }
+.Case-card-text .row p {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
 
-    .Case-card-text h3 {
-      margin: 0;
-      margin-bottom: 5vh;
-    }
+.Case-card-text h3 {
+  margin: 0;
+  margin-bottom: 5vh;
+}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+
+  /* Adjustments for Hero container on mobile */
   .Hero-container {
     padding: 1rem;
     padding-top: 15vh;
@@ -106,22 +116,23 @@
     width: auto;
   }
 
-      .Intro-title h1 {
-        line-height: 105%;
-        text-align: left;
-      }
+  .Intro-title h1 {
+    line-height: 105%;
+    text-align: left;
+  }
 
-      .Intro-title h2 {
-        margin-top: 1vh;
-        text-align: left;
-      }
+  .Intro-title h2 {
+    margin-top: 1vh;
+    text-align: left;
+  }
 
-      .Hero-container p {
-        margin-top: 3vh;
-        text-align: left;
-        line-height: 133%;
-      }
+  .Hero-container p {
+    margin-top: 3vh;
+    text-align: left;
+    line-height: 133%;
+  }
 
+  /* Adjustments for Case section on mobile */
   .Case-section {
     margin-top: 33vh;
     padding: 1rem;
@@ -130,30 +141,32 @@
     display: flex;
   }
 
-      .Case-card {
-        flex-direction: column;
-        width: auto;
-      }
+  /* Adjustments for Case card on mobile */
+  .Case-card {
+    flex-direction: column;
+    width: auto;
+  }
 
-      .Case-card h3 {
-        margin-bottom: 1.3rem;
-      }
+  .Case-card h3 {
+    margin-bottom: 1.3rem;
+  }
 
-      .Case-card-text .row {
-        padding: 0;
-      }
+  .Case-card-text .row {
+    padding: 0;
+  }
 
-      .Case-card-text .row p{
-        font-size: 0.85em ;
-      }
+  .Case-card-text .row p {
+    font-size: 0.85em;
+  }
 
-      .Case-image {
-        max-width: 20rem; /* Ensure it doesn't exceed 320px on larger screens */
-        max-height: 15rem; /* Ensure it doesn't exceed 240px on larger screens */
-        margin-bottom: 1vh;      }
+  .Case-image {
+    max-width: 20rem; /* Ensure it doesn't exceed 320px on larger screens */
+    max-height: 15rem; /* Ensure it doesn't exceed 240px on larger screens */
+    margin-bottom: 1vh;
+  }
 
-      .Case-card-text {
-        width: auto;
-        padding: 0;
-      }
-    }
+  .Case-card-text {
+    width: auto;
+    padding: 0;
+  }
+}

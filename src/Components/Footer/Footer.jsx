@@ -47,13 +47,13 @@ const Footer = forwardRef((props) => {
                     </div>
                     <div className='socials'>
                         <a className="a1" href="https://www.linkedin.com/in/matilda-danielsson-aa58b72a3" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin className='Icon' style={{ width: "32px", height: "auto" }} />
+                            <FaLinkedin className='Icon' />
                         </a>
                         <a className="a2" href="https://github.com/matiiilda" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className='Icon'  style={{ width: "32px", height: "auto" }} />
+                            <FaGithub className='Icon' />
                         </a>
                         <a className="a3" href="https://www.figma.com/design/wTyWO4Hm2RLVEGebgK8N3k/Untitled?node-id=0-1&t=lJk3V6mQhtQTyDCp-1" target="_blank" rel="noopener noreferrer">
-                            <FaFigma className='Icon'  style={{ width: "32px", height: "auto" }} />
+                            <FaFigma className='Icon'  />
                         </a>
                     </div>
                 </div>
