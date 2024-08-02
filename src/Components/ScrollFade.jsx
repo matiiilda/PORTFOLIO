@@ -15,7 +15,7 @@ const ScrollFade = ({ children, className }) => {
         const isMobile = window.innerWidth < 768;
 
         // Set start and end values based on whether it is mobile or desktop
-        const startValue = isMobile ? "top 90%" : "top 80%";
+        const startValue = isMobile ? "top 100%" : "top 95%";
         const endValue = isMobile ? "top 40%" : "top 10%";
 
         gsap.fromTo(element, 
