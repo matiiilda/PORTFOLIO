@@ -60,10 +60,4 @@ p {
     p {
         font-size: 1em;
     }
-
-    svg{
-        width: 16px;
-        max-height: 16px;
-        padding-left: 5px;
-      }
 }

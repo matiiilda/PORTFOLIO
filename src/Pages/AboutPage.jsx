@@ -69,6 +69,7 @@ const AboutPage = () => {
 // ---------------------------
 //Fragmented sections
 //----------------------------
+
 //Render the About Text section
 const renderAboutText = () => {
   const aboutText = (
@@ -85,10 +86,17 @@ const renderAboutText = () => {
         </p>
       </div>
       <div className='p2'>
-        <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-          I find inspiration from the work of: <br />Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, Adham 
-          Dannaway, <br />and of course all of my classmates.
-        </p>
+      {isMobile ? ( 
+          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
+            I find inspiration from the work of: <br />Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, <br />Adham 
+            Dannaway, <br />and of course all of my classmates.
+          </p>
+        ) : ( 
+          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
+            I find inspiration from the work of: <br />Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, Adham 
+            Dannaway, <br />and of course all of my classmates.
+          </p>
+        )}
         <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
           Creativity is my main driving force; I love exploring and experimenting with new ideas, and if 
           there's a new tool or skillset I need to learn along the way, even better.

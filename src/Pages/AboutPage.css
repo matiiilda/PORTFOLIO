@@ -1,6 +1,6 @@
 :root {
   --text-background-light: rgba(255, 255, 255, 0.7);
-  --text-background-dark: #1B2339;
+  --text-background-dark: rgb(27, 35, 57, 0.85);
 }
 
 /* Main AboutPage Container */
@@ -282,6 +282,7 @@ Responsive Adjustments
   .About-text p {
     text-align: left;
     font-size: 1.2em;
+    padding: 0.5rem;
   }
 
   .p2 {
@@ -357,6 +358,10 @@ Responsive Adjustments
   .cv-button p {
     padding-right: 5px;
     font-size: 0.75em;
+  }
+
+  .cv-button svg{
+    max-height: 16px;
   }
 
   .Love-items {
