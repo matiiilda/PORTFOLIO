@@ -44,3 +44,40 @@
   width: 500px;
   height: auto;
 }
+
+@media (max-width: 768px) {
+  .cloud10 {
+    top: 45vh;
+    left: 50%;
+    width: 65vw;
+  }
+  
+  .cloud20 {
+    top: 3.5%;
+    left: -3%;
+    width: 60vw;
+  }
+  
+  .cloud30 {
+    top: 30%;
+    left: 5%;
+    width: 100vw;
+  }
+  
+  .cloud50 {
+    bottom: 32%;
+    left: 41%;
+    width: 60vw;
+  }
+  
+  .cloud60 {
+    bottom: 45%;
+    left: -5%;
+    width: 70vw;
+    height: auto;
+  }
+  
+  .cloud70 {
+display: none;
+  }
+}
