@@ -152,7 +152,7 @@
 
   .text-container {
     margin: 0;
-    margin-bottom: 13vh;
+    margin-bottom: 10vh;
     align-items: flex-start;
     align-self: center;
   }
@@ -171,7 +171,7 @@
     width: auto;
     font-size: 0.75em;
     margin: 0.5em;
-    margin-top: 2em;
+    margin-top: 3rem;
     margin-right: 0;
     padding: 0.1875em;
     gap: 0;
