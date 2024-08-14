@@ -109,6 +109,12 @@
   transition: color 0.3s;
 }
 
+.socials svg.a1, a.a2, .a3 svg.icon{
+  display: flex;
+  height: 32px;
+  width: 32px;
+}
+
 .socials .a1:hover {
   color: #0073b1;
 }
@@ -142,8 +148,25 @@
   z-index: 1;
   font-size: 0.875em;
 }
+.socials svg.icon{
+  width: 32px;
+  height: 32px;
+}
 
 /* Media Queries */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .text-container {
+    font-size: 1em;
+    margin-left: 8rem;
+  }
+
+  .låda-image {
+    margin-right: 0;
+    margin-left: 6rem;
+    height: 70vh;
+  }
+}
+
 @media (max-width: 768px) {
   #footer {
     padding: 0.3125em;
@@ -193,7 +216,7 @@
     padding: 0.3125em;
   }
 
-  svg .icon {
+  svg.icon {
     width: 24px;
     height: 24px;
   }
