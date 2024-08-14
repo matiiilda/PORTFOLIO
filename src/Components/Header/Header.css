@@ -5,6 +5,7 @@ header {
   padding-top: 3vh;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   position: fixed;
   z-index: 5;
   top: 0;
@@ -16,7 +17,7 @@ header {
 /* Header when scrolled */
 header.header-scrolled {
   background: var(--header-gradient);
-  padding-top: 1vh;
+  padding-top: 0;
 }
 
 /* Logo Container */
@@ -29,13 +30,14 @@ header.header-scrolled {
 .Logo-Image {
   width: 70%;
   height: auto;
-  margin-left: 32px;
+  margin-left: 1.5em;
 }
 
 .Logo-Image-Scrolled {
   width: 50px;
   height: auto;
-  padding: 5px;
+  padding: 0.6em;
+  margin-left: 0.7em;
 }
 
 /* Logo Hover Effect */
@@ -48,17 +50,19 @@ header.header-scrolled {
 .Link-Container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   gap: 50px;
   font-size: 24px;
   font-family: Poppins, sans-serif;
   font-weight: 600;
-  margin-right: 32px;
+  margin-right: 0.7em;
+}
+
+.Link-Container svg{
+  padding: 0;
 }
 
 /* Links */
 .link, .Link-Container a {
-  height: 26px;
   text-decoration: none;
 }
 

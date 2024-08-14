@@ -1,11 +1,13 @@
 import React from 'react';
 import CaseCard from '../Components/Cases/CaseCard.jsx';
 import './LandingPage.css';
+import futurewood1 from '../assets/case images/MacBook Air.png';
 
 const LandingPage = () => {
   const cases = [
     {
       id: "1",
+      image: futurewood1,
       title: "Future Wood",
       role: "UX/UI-Design",
       typeOfProject: "School Project",
@@ -44,6 +46,7 @@ const LandingPage = () => {
           <CaseCard
             key={caseInfo.id}
             id={caseInfo.id}
+            image={caseInfo.image}
             title={caseInfo.title}
             role={caseInfo.role}
             typeOfProject={caseInfo.typeOfProject}
