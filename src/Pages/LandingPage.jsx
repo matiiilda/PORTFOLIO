@@ -6,7 +6,7 @@ import futurewood1 from '../assets/case images/MacBook Air.png';
 const LandingPage = () => {
   const cases = [
     {
-      id: "1",
+      id: "future-wood",
       image: futurewood1,
       title: "Future Wood",
       role: "UX/UI-Design",
@@ -14,14 +14,14 @@ const LandingPage = () => {
       content: "Creating a webbshop for responsibly-sourced wooden tables done by the imagined company Future Wood."
     },
     {
-      id: "2",
+      id: "plant-pal",
       title: "Plant Pal",
       role: "UX/UI-Design & Frontend",
       typeOfProject: "Passion Project",
       content: "A mobile application made to help first-time plantowners choose and take care of their plants. More TBA"
     },
     {
-      id: "3",
+      id: "simply-made",
       title: "Simply Made",
       role: "UX/UI-Design",
       typeOfProject: "Team Project",
