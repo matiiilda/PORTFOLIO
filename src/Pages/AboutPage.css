@@ -72,6 +72,9 @@
   background-color: var(--text-background-dark);
 }
 
+.Skill-list.lang a:hover{
+  transform: none;
+}
 /* About Text Section
 ----------------------
 ----------------------*/

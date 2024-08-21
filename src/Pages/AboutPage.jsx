@@ -3,6 +3,7 @@ import { ThemeContext } from '../ThemeContext.jsx';
 import { PiStarFourFill } from 'react-icons/pi';
 import { FaComputer, FaCompassDrafting } from 'react-icons/fa6';
 import { FaFileDownload } from "react-icons/fa";
+import { GrLanguage } from "react-icons/gr";
 import ScrollFade from '../Components/ScrollFade.jsx';
 import AutoFade from '../Components/AutoFade.jsx';
 import cvPDF from '../assets/MatildaDanielssoncv.pdf';
@@ -17,10 +18,10 @@ const AboutPage = () => {
 
   // Array of words for the Love Items section
   const words = [
-    "Punk-culture", "Painting", "Late evenings", "Invisible design", 
-    "Grapefruit Soju", "Motion design", "Matcha", "Lots of whitespace", 
-    "Cats", "Rounded corners", "Video games", "Reading long books", 
-    "Brain-storming", "Cooking", "Vibrant colors"
+    "Punk-culture", "Motion design", "Cats", "Invisible design", 
+    "70's music", "Rounded corners", "Cooking", "Brain-storming", 
+    "Video games", "Vibrant colors", "Grapefruit Soju", "Painting", 
+    "Reading long books", "Lots of whitespace", "Late evenings"
   ];
 
   // Handle window resize to update isMobile state
@@ -76,13 +77,15 @@ const renderAboutText = () => {
     <AutoFade className='About-text'>
       <div className='p1'>
         <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-          I grew up with a Game Boy in one hand, a paintbrush in the other and a love for creativity. 
-          Little did I know that this would be my gateway into interactive design.
+          I grew up with a Game Boy in one hand, a paintbrush in the other and a love for 
+          creativity. Little did I know that this would be my gateway into interactive design.
         </p>
         <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-          Before UX I studied orthotics and prosthetics, during which I 
-          learned the importance of empathy and tailored solutions. Eventually, I discovered that my wish for helping people
-          and my love for design could intertwine into a career in UX.
+        Before UX, I studied orthotics and prosthetics, where I learned the 
+        value of empathy and tailored solutions. Eventually, I discovered that 
+        my wish to help people and my love for design could intertwine into a career in UX. <br/>
+        I aim to advocate for greater attention to accessibility and to create products that are 
+        usable by all.
         </p>
       </div>
       <div className='p2'>
@@ -130,6 +133,17 @@ const renderAboutText = () => {
           <a href="https://www.blender.org/about/" target="_blank" rel="noopener noreferrer">Blender</a>
         </div>
       </div>
+      <div className='Skill-list lang'>
+        <div className='Skill-list-title'>
+        <GrLanguage /><h3>Languages</h3>
+        </div>
+        <div className={`tags ${isDark ? 'dark' : ''}`}>
+          <a>Svenska</a>
+          <a>English</a>
+          <a className='jap'>日本語</a>
+        </div>
+      </div>
+
     </div>
   );
 

@@ -33,7 +33,7 @@ function App() {
               path="/"
               element={<LandingPage />} />
             <Route
-              path="/case:id"
+              path="/case/:id"
               element={<CasePage />} />
           </Routes>
           <Footer />

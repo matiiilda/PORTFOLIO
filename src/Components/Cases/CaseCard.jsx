@@ -11,7 +11,7 @@ const CaseCard = ({ id, title, role, typeOfProject, content, image }) => {
   const cardClassName = `Case-card${isEven(id) ? ' even' : ''}`;
 
   return (
-    <Link to={`/case${id}`} className="block">
+    <Link to={`/case/${id}`} className="block">
       <div className={cardClassName}>
       <div className='Case-image'>
           <img src={image} alt={title} />
