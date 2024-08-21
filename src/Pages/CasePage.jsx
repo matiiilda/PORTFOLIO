@@ -5,7 +5,7 @@ import './CasePage.css';
 const CasePage = () => {
   const { id } = useParams(); // Get the case ID from the URL
 
-  // If the case ID is not '1', show the work-in-progress message
+  // If the case ID is not 'future-wood', show the work-in-progress message
   if (id !== 'future-wood') {
     return (
       <div className="case-page">
