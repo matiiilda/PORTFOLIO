@@ -20,7 +20,7 @@ function App() {
           <Header/>
           <Routes>
             <Route
-              path="/about"
+              path='/about'
               element={<AboutPage />} />
           </Routes>
           <Footer />
@@ -30,10 +30,10 @@ function App() {
           <Header />
           <Routes>
             <Route
-              path="/"
+              path='/'
               element={<LandingPage />} />
             <Route
-              path="/case/:id"
+              path='/case/:id'
               element={<CasePage />} />
           </Routes>
           <Footer />
