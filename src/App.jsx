@@ -11,13 +11,35 @@ import BackgroundWrapperAbout from './Components/Background/BackgroundWrapperAbo
 import './App.css';
 
 function App() {
+  const location = useLocation();
+  console.log('Current path:', location.pathname); // Log the current path
+
   return (
     <ThemeProvider>
-      <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/case/:id' element={<CasePage />} />
-      </Routes>
+      {location.pathname === '/about' ? (
+        <BackgroundWrapperAbout>
+          <Header/>
+          <Routes>
+            <Route
+              path='/about'
+              element={<AboutPage />} />
+          </Routes>
+          <Footer />
+        </BackgroundWrapperAbout>
+      ) : (
+        <BackgroundWrapper>
+          <Header />
+          <Routes>
+            <Route
+              path='/'
+              element={<LandingPage />} />
+            <Route
+              path='/case/:id'
+              element={<CasePage />} />
+          </Routes>
+          <Footer />
+        </BackgroundWrapper>
+      )}
     </ThemeProvider>
   );
 }

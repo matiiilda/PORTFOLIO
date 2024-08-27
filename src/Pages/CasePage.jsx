@@ -4,13 +4,6 @@ import './CasePage.css';
 
 const CasePage = () => {
   const { id } = useParams(); // Get the case ID from the URL
-  console.log('Case ID:', id); // Log the case ID
-
-  // Validate the id parameter
-  if (!id || !/^[\w-]+$/.test(id)) {
-    console.error('Invalid case ID:', id);
-    return <div>Error: Invalid case ID</div>;
-  }
 
   // If the case ID is not 'future-wood', show the work-in-progress message
   if (id !== 'futurewood') {
