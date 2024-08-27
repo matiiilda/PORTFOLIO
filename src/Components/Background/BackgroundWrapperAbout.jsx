@@ -55,13 +55,13 @@ const BackgroundWrapper = ({ children }) => {
   return (
       <div className="background-wrapper" id="hero">
         {/* Cloud 1 */}
-        <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud10" data-speed="0.3"/>
+        <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud10" data-speed="0.6"/>
         
         {/* Cloud 2 */}
-        <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud20" data-speed="0.4"/>
+        <img src={isDark ? Cloud2D : Cloud2L} className="cloud cloud20" data-speed="0.5"/>
         
         {/* Cloud 3 */}
-        <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud30" data-speed="0.4"/>
+        <img src={isDark ? Cloud3D : Cloud3L} className="cloud cloud30" data-speed="0.2"/>
 
         {/* Cloud 5 */}
         <img src={isDark ? Cloud1D : Cloud1L} className="cloud cloud50" data-speed="0.3"/>
