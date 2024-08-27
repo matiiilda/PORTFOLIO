@@ -1,14 +1,15 @@
 import React from 'react';
 import CaseCard from '../Components/Cases/CaseCard.jsx';
 import './LandingPage.css';
-import futurewood1 from '../assets/case images/MacBook_Air.png';
+import futurewood1 from '../assets/caseImages/MacBook_Air.png';
+import placeholder from '../assets/caseImages/placeholder.png';
 
 const LandingPage = () => {
   const cases = [
     {
       id: "futurewood",
-      image: futurewood1,
       title: "Future Wood",
+      image: futurewood1,
       role: "UX/UI-Design",
       typeOfProject: "School Project",
       content: "Creating a webbshop for responsibly-sourced wooden tables done by the imagined company Future Wood."
@@ -16,6 +17,7 @@ const LandingPage = () => {
     {
       id: "plantpal",
       title: "Plant Pal",
+      image: placeholder,
       role: "UX/UI-Design & Frontend",
       typeOfProject: "Passion Project",
       content: "A mobile application made to help first-time plantowners choose and take care of their plants. More TBA"
@@ -23,6 +25,7 @@ const LandingPage = () => {
     {
       id: "simplymade",
       title: "Simply Made",
+      image: placeholder,
       role: "UX/UI-Design",
       typeOfProject: "Team Project",
       content: "An e-commerse site for hobbyists, to help them gain a customer-base and sell handcrafted items. More TBA"
