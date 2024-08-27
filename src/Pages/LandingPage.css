@@ -73,8 +73,6 @@ a:visited {
 
 /* Styles for the case image */
 .Case-image {
-  width: 43.75rem;
-  height: 31.25rem;
   border-radius: 0.5rem;
   background-color: transparent;
   display: flex;
@@ -83,8 +81,7 @@ a:visited {
 }
 
 .Case-image img {
-  width: auto;
-  height: 125%;
+  width: 670px;
   object-fit: cover;
   overflow: hidden;
   border-radius: 8px;

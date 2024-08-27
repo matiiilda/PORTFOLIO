@@ -1,8 +1,8 @@
 import React from 'react';
 import CaseCard from '../Components/Cases/CaseCard.jsx';
 import './LandingPage.css';
-import futurewood1 from '../assets/caseImages/MacBook_Air.png';
-import placeholder from '../assets/caseImages/placeholder.png';
+import futurewood1 from '../assets/caseImages/MacBook_Air.webp';
+import placeholder from '../assets/caseImages/placeholder.webp';
 
 const LandingPage = () => {
   const cases = [
