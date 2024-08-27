@@ -127,12 +127,14 @@
   max-width: 1500px;
   font-size: 1.2rem;
   font-weight: 700;
-  background-color: var(--text-background-light);
+  border-bottom: solid 3px var(--text-background-dark);
+  border-top: solid 3px var(--text-background-dark);
   position: relative;
 }
 
 .horizontal-scrolling-items.dark {
-  background-color: var(--text-background-dark);
+  border-bottom: solid 3px var(--text-background-light);
+  border-top: solid 3px var(--text-background-light);
 }
 
 .horizontal-scrolling-items__inner {
