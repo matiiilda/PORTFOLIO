@@ -21,8 +21,9 @@
   align-items: flex-start;
   justify-content: flex-end;
   height: 100vh;
-  margin-top: auto;
+  margin-top: 4vh;
   padding: 2rem;
+  padding-bottom: 0;
 }
 
 /* Text Container */
