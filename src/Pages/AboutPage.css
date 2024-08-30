@@ -242,7 +242,9 @@
 .cv-button {
   display: flex;
   flex-direction: row;
-  padding: 10px 5px;
+  padding: 0.625em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
   color: var(--primary-text-color);
   border: 2px solid var(--primary-text-color);
   border-radius: 30px;
