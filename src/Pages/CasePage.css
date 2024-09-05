@@ -2,13 +2,71 @@
     line-height: 1.6;
     padding: 20px;
     padding-top: 33vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15vh;
+    text-align: left;
+    width: 100%;
   }
   
-  .hero-section {
+  .hero {
     position: relative;
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 25vh;
   }
+
+  .case-page {
+    padding: 20px;
+  }
+  
+  section {
+    text-align: justify;
+    padding: 0 33%;
+  }
+
+  section.work-in-progress {
+    text-align: center;
+  }
+  section.introduction img{
+    width: 100%;
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes any extra space at the bottom of the image */
+  }
+  
+  .image-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .image-collage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .process-tactics,
+  .results,
+  .design-showcase {
+    margin-top: 40px;
+  }
+  
+  .design-system-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .design-system-images img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
   
   .process-tactics, .results, .design-showcase {
     margin-bottom: 50px;
@@ -30,4 +88,3 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
