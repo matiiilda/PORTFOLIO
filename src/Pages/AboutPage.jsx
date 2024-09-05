@@ -235,6 +235,22 @@ const renderAboutText = () => {
     </div>
   );
 
+  //spotify perhaps?
+  const SpotifyEmbed = () => {
+    return (
+      <iframe
+        style={{ borderRadius: '12px' }}
+        src="https://open.spotify.com/embed/track/0WQiDwKJclirSYG9v5tayI?utm_source=generator"
+        width="auto"
+        height="152"
+        frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        allowFullScreen
+        loading="lazy"
+      ></iframe>
+    );
+  };
+
   return (
     <div className='AboutPage'>
       {isMobile ? (

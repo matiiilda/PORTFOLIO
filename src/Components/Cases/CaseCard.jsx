@@ -4,9 +4,12 @@ import { PiStarFourFill } from "react-icons/pi";
 import '../../Pages/LandingPage.css';
 
 const CaseCard = ({ id, title, role, typeOfProject, content, image }) => {
+  const scrollToTop = () => { // Instantaneous scroll, used for changing pages
+    window.scrollTo({ top: 0, behavior: 'auto' }); 
+  };
 
   return (
-    <Link to={`/case/${id}`} className="block">
+    <Link to={`/case/${id}`} className="block" onClick={scrollToTop}>
       <div className='Case-card'>
       <div className='Case-image'>
           <img src={image} alt={title} />

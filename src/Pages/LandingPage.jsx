@@ -1,35 +1,9 @@
 import React from 'react';
 import CaseCard from '../Components/Cases/CaseCard.jsx';
+import cases from '../Components/Cases/CaseData.jsx';
 import './LandingPage.css';
-import futurewood1 from '../assets/caseImages/MacBook_Air.png';
-import placeholder from '../assets/caseImages/Placeholder.png';
+
 const LandingPage = () => {
-  const cases = [
-    {
-      id: "futurewood",
-      title: "Future Wood",
-      image: futurewood1,
-      role: "UX/UI-Design",
-      typeOfProject: "School Project",
-      content: "Creating a webbshop for responsibly-sourced wooden tables done by the imagined company Future Wood."
-    },
-    {
-      id: "plantpal",
-      title: "Plant Pal",
-      image: placeholder,
-      role: "UX/UI-Design & Frontend",
-      typeOfProject: "Passion Project",
-      content: "A mobile application made to help first-time plantowners choose and take care of their plants. More TBA"
-    },
-    {
-      id: "simplymade",
-      title: "Simply Made",
-      image: placeholder,
-      role: "UX/UI-Design",
-      typeOfProject: "Team Project",
-      content: "An e-commerse site for hobbyists, to help them gain a customer-base and sell handcrafted items. More TBA"
-    }
-  ];
 
   return (
     <div className='landing-page'>
@@ -44,15 +18,15 @@ const LandingPage = () => {
         </p>
       </div>
       <div className='Case-section'>
-        {cases.map((caseInfo) => (
+        {cases.map((CaseData) => (
           <CaseCard
-            key={caseInfo.id}
-            id={caseInfo.id}
-            image={caseInfo.image}
-            title={caseInfo.title}
-            role={caseInfo.role}
-            typeOfProject={caseInfo.typeOfProject}
-            content={caseInfo.content}
+            key={CaseData.id}
+            id={CaseData.id}
+            image={CaseData.image}
+            title={CaseData.title}
+            role={CaseData.role}
+            typeOfProject={CaseData.typeOfProject}
+            content={CaseData.content}
           />
         ))}
       </div>
