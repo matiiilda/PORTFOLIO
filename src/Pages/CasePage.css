@@ -29,10 +29,16 @@
   section.work-in-progress {
     text-align: center;
   }
-  section.introduction img{
-    width: 100%;
-    height: auto; /* Maintains the aspect ratio */
-    display: block; /* Removes any extra space at the bottom of the image */
+  section.introduction img {
+    width: 150%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
+    padding: 1rem 0;
   }
   
   .image-collage {

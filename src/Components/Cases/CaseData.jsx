@@ -1,7 +1,7 @@
 import futurewood1 from '../../assets/caseImages/wood/MacBook_Air.png';
 import upplevelsekartaD from '../../assets/caseImages/wood/future1D.svg';
 import upplevelsekartaL from '../../assets/caseImages/wood/future1L.svg';
-import placeholder from '../../assets/caseImages/Placeholder.png';
+import placeholder from '../../assets/caseImages/placeholder.png';
 
 export const cases = [
     {
@@ -12,7 +12,7 @@ export const cases = [
       typeOfProject: "School Project",
       content: "Creating a webshop for responsibly-sourced wooden tables done by the imagined company Future Wood.",
 
-      introduction1:"Future Wood is an imaginary start-up company that offers customizable tables. Their goal is to bring more sustainable furniture to the market and encourage slow-living; And our goal was to create a webbshop for them.",
+      introduction1:"Future Wood is an imaginary start-up company that offers customizable tables. Their goal is to bring more sustainable furniture to the market and encourage slow-living.",
       introduction2:"In this project we followed the whole process, from idéa to finished prototype. We brainstormed marketing strategies, core branding, did user-research as well as user-interviews to then later incorporate into the finished product.",
 
       processAndTactics: "Here we describe the process and tactics used in Case futurewood, highlighting key strategies and approaches.",
