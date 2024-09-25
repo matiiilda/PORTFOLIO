@@ -67,7 +67,7 @@ const CasePage = () => {
               <section className='introduction'>
                 <p>{caseData.introduction1}<br /><br />{caseData.introduction2}</p>
                 {upplevelsekarta && (
-                    <img src={upplevelsekarta} alt='Upplevelsekarta' />
+                    <img src={upplevelsekarta} alt='A graph showing how futurewood will use being modern, intuitive and exclusive to cater to the quality-focused, the style-savvy and the practical, to offer their services.' />
                   )}
               </section>
 
@@ -91,6 +91,13 @@ const CasePage = () => {
                   <FigmaEmbed />
                 </div>
               </section>
+
+              {/* Image Collage Section */}
+              <div className='image-collage'>
+                {caseData.collageImages && caseData.collageImages.map((imgSrc, index) => (
+                  <img key={index} src={imgSrc} alt={`Collage image ${index + 1}`} />
+                ))}
+              </div>
             </>
           )}
         </>
@@ -98,11 +105,5 @@ const CasePage = () => {
     </div>
   );
 };
-
-                  <div className='image-collage'>
-                  {caseData.collageImages && caseData.collageImages.map((imgSrc, index) => (
-                    <img key={index} src={imgSrc} alt={`Collage image ${index + 1}`} />
-                  ))}
-                </div>
 
 export default CasePage;
