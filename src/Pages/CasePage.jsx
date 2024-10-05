@@ -9,25 +9,6 @@ const CasePage = () => {
   const [caseData, setCaseData] = useState(null);
   const { isDark } = useContext(ThemeContext); // Access theme context
 
-  const FigmaEmbed = () => {
-    const iframeStyles = {
-      border: '1px solid rgba(0, 0, 0, 0.1)',
-    };
-
-    return (
-      <div>
-        <iframe
-          style={iframeStyles}
-          width='450'
-          height='800'
-          src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FPTIVVfjVMpQ82VoOwRSIdG%2FFuture-Wood-Presentations%3Fpage-id%3D2263%253A9966%26node-id%3D2263-10861%26node-type%3DFRAME%26viewport%3D2446%252C576%252C0.21%26t%3DHWvPN65ZMd8YMwH2-1%26scaling%3Dmin-zoom%26content-scaling%3Dfixed'
-          allowFullScreen
-          title='Figma Embed'
-        ></iframe>
-      </div>
-    );
-  };
-
   useEffect(() => {
     // Find the case data based on the ID from the URL
     const foundCase = cases.find((caseItem) => caseItem.id === id);
@@ -38,8 +19,9 @@ const CasePage = () => {
     }
   }, [id]);
 
-  // Get the correct `upplevelsekarta` image based on the theme
+  // Get the correct images based on the theme
   const upplevelsekarta = caseData ? (isDark ? caseData.upplevelsekartaD : caseData.upplevelsekartaL) : null;
+  const personasImage = caseData ? (isDark ? caseData.personasD : caseData.personasL) : null;
 
   return (
     <div className='case-page'>
@@ -47,7 +29,6 @@ const CasePage = () => {
         <h1>{caseData ? caseData.title : 'Loading...'}</h1>
       </section>
 
-      {/* Fallback for Nonexistent Cases */}
       {!caseData ? (
         <section className='work-in-progress'>
           <h2>This case doesn't exist</h2>
@@ -55,7 +36,6 @@ const CasePage = () => {
         </section>
       ) : (
         <>
-          {/* Conditional rendering for Works in Progress */}
           {(id === 'plantpal' || id === 'simplymade') ? (
             <section className='work-in-progress'>
               <h2>Work in Progress</h2>
@@ -63,41 +43,61 @@ const CasePage = () => {
             </section>
           ) : (
             <>
-              {/* This one is so far only for FUTURE WOOD */}
+              {/* Introduction Section */}
               <section className='introduction'>
                 <p>{caseData.introduction1}<br /><br />{caseData.introduction2}</p>
                 {upplevelsekarta && (
-                    <img src={upplevelsekarta} alt='A graph showing how futurewood will use being modern, intuitive and exclusive to cater to the quality-focused, the style-savvy and the practical, to offer their services.' />
-                  )}
+                  <img src={upplevelsekarta} alt='Experience map' />
+                )}
               </section>
 
               {/* Process & Tactics Section */}
               <section className='process-tactics'>
-                <h2>Process & Tactics</h2>
-                <p> {caseData.processAndTactics}</p>
+                <p>{caseData.processAndTactics1}</p>
+                <p>{caseData.processAndTactics2}</p>
+                {personasImage && (
+                  <img src={personasImage} alt='Personas representing target audience' />
+                )}
               </section>
 
-              {/* Results Section */}
-              <section className='results'>
-                <h2>Results</h2>
-                <p>{caseData.results}</p>
+              {/* Task Prioritization Section */}
+              <section className='task-prioritization'>
+                <h4>Feature Prioritization</h4>
+                <p>{caseData.design1}</p>
+                <img src={caseData.måltavla} alt='Feature prioritization map' />
               </section>
 
-              {/* Design System Showcase */}
-              <section className='design-showcase'>
-                <h2>Design System</h2>
-                <div className='design-system-images'>
-                  <img src={caseData.image} alt={`Design for ${caseData.title}`} />
-                  <FigmaEmbed />
+              {/* Start Page Comparison Section */}
+              <section className='start-page-comparison'>
+                <h4>Start-Page Comparison</h4>
+                <div className='side-by-side'>
+                  <img src={caseData.startsida1} alt='Start page design 1' />
+                  <img src={caseData.startsida2} alt='Start page design 2' />
+                </div>
+              </section>
+
+              {/* Wireframes Section */}
+              <section className='wireframes'>
+                <h4>Wireframes</h4>
+                <p>{caseData.design2}</p>
+                <div className='wireframe-images'>
+                  <img src={caseData.startsida1} alt='Start page design 1' />
+                  <img src={caseData.produktsidaw} alt='Wireframe of productpage' />
+                  <img src={caseData.tillvalssida} alt='Wireframe of Options Page' />
+                  <img src={caseData.kassaW} alt='Wireframe of checkout' />
                 </div>
               </section>
 
               {/* Image Collage Section */}
+              <section className='Hi-fi'>
+              <p>{caseData.design3}</p>
               <div className='image-collage'>
-                {caseData.collageImages && caseData.collageImages.map((imgSrc, index) => (
-                  <img key={index} src={imgSrc} alt={`Collage image ${index + 1}`} />
-                ))}
+                <img src={caseData.startsidap} alt='Start Page - Mobile' />
+                <img src={caseData.matbordp1} alt='Table Product Page 1' />
+                <img src={caseData.matbordp2} alt='Table Product Page 2' />
+                <img src={caseData.kassaP} alt='Checkout - Mobile' />
               </div>
+              </section>
             </>
           )}
         </>
