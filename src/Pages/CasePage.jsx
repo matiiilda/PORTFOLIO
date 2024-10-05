@@ -62,14 +62,12 @@ const CasePage = () => {
 
               {/* Task Prioritization Section */}
               <section className='task-prioritization'>
-                <h4>Feature Prioritization</h4>
                 <p>{caseData.design1}</p>
-                <img src={caseData.måltavla} alt='Feature prioritization map' />
               </section>
 
               {/* Start Page Comparison Section */}
               <section className='start-page-comparison'>
-                <h4>Start-Page Comparison</h4>
+                <h4>Start-page iterations</h4>
                 <div className='side-by-side'>
                   <img src={caseData.startsida1} alt='Start page design 1' />
                   <img src={caseData.startsida2} alt='Start page design 2' />
@@ -85,6 +83,7 @@ const CasePage = () => {
                   <img src={caseData.produktsidaw} alt='Wireframe of productpage' />
                   <img src={caseData.tillvalssida} alt='Wireframe of Options Page' />
                   <img src={caseData.kassaW} alt='Wireframe of checkout' />
+                  <img src={caseData.bekräftelse} alt='Wireframe of confirmation' />
                 </div>
               </section>
 
@@ -92,10 +91,13 @@ const CasePage = () => {
               <section className='Hi-fi'>
               <p>{caseData.design3}</p>
               <div className='image-collage'>
-                <img src={caseData.startsidap} alt='Start Page - Mobile' />
-                <img src={caseData.matbordp1} alt='Table Product Page 1' />
-                <img src={caseData.matbordp2} alt='Table Product Page 2' />
-                <img src={caseData.kassaP} alt='Checkout - Mobile' />
+                <img src={caseData.startsidap} alt='Start Page' />
+                <img src={caseData.produktsidan} alt='Productpage' />
+                <img src={caseData.barbord} alt='Table Productpage' />
+                <img src={caseData.matbordp1} alt='Table Productpage' />
+                <img src={caseData.matbordp2} alt='Table Productpage with pop-up' />
+                <img src={caseData.kassaP} alt='Checkout' />
+                <img src={caseData.bekräftelsep} alt='Confirmation' />
               </div>
               </section>
             </>
