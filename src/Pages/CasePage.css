@@ -31,23 +31,25 @@ section.introduction img,
 section.process-tactics img {
   width: 100%;
   height: auto;
+  object-fit: contain; /* Prevents images from getting stretched */
   display: block;
   margin: 20px auto;
   position: relative;
   max-width: 700px;
 }
 
-section.task-prioritization img{
-  height: auto;
-  display: block;
-  margin: 20px auto;
+/* Uplevelsekarta: Larger than container and centered */
+section.introduction img {
+  max-width: none;
+  width: 110%; /* Slightly larger than the container */
+  transform: translateX(-5%); /* Centered */
 }
 
 .process-tactics,
 .task-prioritization,
 .start-page-comparison,
 .wireframes,
-.design-showcase {
+.Hi-fi {
   margin-top: 40px;
 }
 
@@ -55,75 +57,55 @@ section.task-prioritization img{
 .task-prioritization h2,
 .start-page-comparison h2,
 .wireframes h2,
-.design-showcase h2 {
+.Hi-fi h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* Bento layout for multiple images */
 .start-page-comparison .side-by-side,
-.wireframes .wireframe-images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.side-by-side img,
-.wireframe-images img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.design-system-images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.design-system-images img {
-  max-width: 80%;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.image-collage {
+.wireframes .wireframe-images,
+.Hi-fi .image-collage {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-auto-rows: 1fr; /* Row height will adapt based on content */
+  gap: 10px;  /* Space between grid items */
 }
 
+/* Apply styles for the images in the collage */
+.side-by-side img,
+.wireframe-images img,
 .image-collage img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain; /* Keeps the aspect ratio intact */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Ensure images do not exceed their natural size */
+.image-collage img {
+  max-width: 100%; /* Prevents images from exceeding the container width */
+  max-height: 100%; /* Prevents images from getting blown up beyond their natural height */
+  object-fit: contain; /* Keeps aspect ratio and prevents image stretching */
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   section {
-      padding: 0 10%;
+    padding: 0 10%;
   }
 
   .start-page-comparison .side-by-side,
-  .wireframes .wireframe-images {
-      flex-direction: column;
-  }
-
-  .image-collage {
-      grid-template-columns: repeat(2, 1fr);
+  .wireframes .wireframe-images,
+  .Hi-fi .image-collage {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
   }
 }
 
 @media (max-width: 768px) {
   .image-collage {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column on very small screens */
   }
 }
