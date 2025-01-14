@@ -9,6 +9,7 @@ import CasePage from './Pages/CasePage';
 import BackgroundWrapper from './Components/Background/BackgroundWrapper';
 import BackgroundWrapperAbout from './Components/Background/BackgroundWrapperAbout';
 import './App.css';
+import MyWorkPage from './Pages/MyWorkPage';
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,9 @@ function App() {
         <BackgroundWrapperAbout>
           <Header/>
           <Routes>
+          <Route
+              path='/my-work'
+              element={<MyWorkPage />} />
             <Route
               path='/about'
               element={<AboutPage />} />
