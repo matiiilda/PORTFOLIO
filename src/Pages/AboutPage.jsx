@@ -77,7 +77,7 @@ const renderAboutText = () => {
     <AutoFade className='About-text'>
       <div className='p1'>
         <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-          I grew up with a Game Boy in one hand, a paintbrush in the other and a love for 
+          I grew up with a GameBoy in one hand, a paintbrush in the other and a love for 
           creativity. Little did I know that this would be my gateway into interactive design.
         </p>
         <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
@@ -119,7 +119,6 @@ const renderAboutText = () => {
           <a href="https://www.w3schools.com/whatis/whatis_html.asp" target="_blank" rel="noopener noreferrer">HTML</a>
           <a href="https://www.w3schools.com/whatis/whatis_css.asp" target="_blank" rel="noopener noreferrer">CSS</a>
           <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a>
-          <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
           <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
           <a href="https://git-scm.com/about/branching-and-merging" target="_blank" rel="noopener noreferrer">Git</a>
         </div>
@@ -130,7 +129,8 @@ const renderAboutText = () => {
         </div>
         <div className={`tags ${isDark ? 'dark' : ''}`}>
           <a href="https://www.w3schools.com/nodejs/nodejs_intro.asp" target="_blank" rel="noopener noreferrer">Node.js</a>
-          <a href="https://www.adobe.com/ai/overview.html" target="_blank" rel="noopener noreferrer">Adobe Ai</a>
+          <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
+          <a href="https://www.adobe.com/ai/overview.html" target="_blank" rel="noopener noreferrer">Adobe illustrator</a>
           <a href="https://www.blender.org/about/" target="_blank" rel="noopener noreferrer">Blender</a>
         </div>
       </div>

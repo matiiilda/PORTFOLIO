@@ -78,7 +78,7 @@ const Header = () => {
         </div>
       </Link>
       <div className={`Link-Container ${isScrolled ? 'header-scrolled' : ''} ${isMenuOpen ? 'open' : ''}`}>
-      <Link to="/work" className='link' onClick={scrollToTop}>My work</Link>
+      <Link to="/my-work" className='link' onClick={scrollToTop}>My work</Link>
         <Link to="/about" className='link' onClick={scrollToTop}>About</Link>
         <a onClick={scrollToBottom} className='link'>Contact</a>
         <div className='ThemeSwitch-Container' onClick={toggleTheme}>

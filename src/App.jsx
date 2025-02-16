@@ -21,9 +21,6 @@ function App() {
         <BackgroundWrapperAbout>
           <Header/>
           <Routes>
-          <Route
-              path='/my-work'
-              element={<MyWorkPage />} />
             <Route
               path='/about'
               element={<AboutPage />} />
@@ -40,6 +37,9 @@ function App() {
             <Route
               path='/case/:id'
               element={<CasePage />} />
+              <Route
+              path='/my-work'
+              element={<MyWorkPage />} />
           </Routes>
           <Footer />
         </BackgroundWrapper>
