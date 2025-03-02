@@ -32,9 +32,17 @@
 
   --primary-text-color-light: #1b2339;
   --secondary-text-color-light: #e6e2ff;
+  --tertiary-text-color-light: #474d5f;
 
   --primary-text-color-dark: #e6e2ff;
   --secondary-text-color-dark: #1b2339;
+  --tertiary-text-color-dark: #a9a1cc;
+
+  --margin-x-small: 0.25rem; /* 4px */
+  --margin-small: 0.5rem; /* 8px */
+  --margin-medium: 1rem; /* 16px */
+  --margin-large: 2rem; /* 32px */
+  --margin-x-large: 4rem; /* 64px */
 }
 
 /* Light theme */
@@ -45,6 +53,7 @@
   --card-gradient: var(--card-gradient-light);
   --primary-text-color: var(--primary-text-color-light);
   --secondary-text-color: var(--secondary-text-color-light);
+  --tertiary-text-color: var(--tertiary-text-color-light);
 }
 
 /* Dark theme */
@@ -55,6 +64,7 @@
   --card-gradient: var(--card-gradient-dark);
   --primary-text-color: var(--primary-text-color-dark);
   --secondary-text-color: var(--secondary-text-color-dark);
+  --tertiary-text-color: var(--tertiary-text-color-dark);
 }
 
 body {

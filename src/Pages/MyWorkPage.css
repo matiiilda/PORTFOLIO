@@ -1,40 +1,76 @@
 .my-work-page {
+  padding: var(--margin-x-large);
   padding-top: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
   position: relative;
+  height: 120vh;
 }
 
 .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--margin-medium);
+  width: 100%;
   margin: 0 auto;
 }
 
-.gallery:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .gallery-item {
-  width: 33.33%;
-  float: left;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
 .gallery-item img {
   display: block;
   max-width: 100%;
+  height: auto;
+  border: white 2px solid;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.selected-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .button-group {
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  width: 100%;
+  margin: var(--margin-medium);
+}
+.tab-button {
+  transition: border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* Initial state with transparent border */
+  border-radius: 0;
+}
+
+.button.notactive {
+  color: var(--tertiary-text-color);
+  border: none;
+  border-bottom: 2px solid transparent;
 }
 
 .button.active {
-  background-color: var(--secondary-text-color);
-  border-color: var(--secondary-text-color);
+  border: none;
+  border-radius: 0;
+  border-bottom: var(--primary-text-color) 2px solid;
+}
+
+.button.active:hover {
+  opacity: 1;
 }

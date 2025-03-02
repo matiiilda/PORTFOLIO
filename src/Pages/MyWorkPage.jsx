@@ -1,28 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import pic1 from "../assets/art/chuchu1-2.png";
 import thu1 from "../assets/art/chuchu1-3.png";
 import pic2 from "../assets/art/cryptopfp1 1.png";
 import thu2 from "../assets/art/cryptopfp1 2.png";
 import pic3 from "../assets/art/ldk1 1.png";
 import thu3 from "../assets/art/ldk1 2.png";
+import pic4 from "../assets/art/Inwoo3 1.png";
+import thu4 from "../assets/art/Inwoo3 2.png";
+import pic5 from "../assets/art/LEEEEZ23 1.png";
+import thu5 from "../assets/art/LEEEEZ23 2.png";
+import pic6 from "../assets/art/ren 1.png";
+import thu6 from "../assets/art/ren 2.png";
+import pic7 from "../assets/art/MTA2 1.png";
+import thu7 from "../assets/art/MTA2 2.png";
+import pic8 from "../assets/art/tear 1.png";
+import thu8 from "../assets/art/tear 2.png";
 import Button from "../Components/Button/Button";
 import "./MyWorkPage.css";
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images, resetSelectedImage }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const galleryRef = useRef(null);
+
+  const handleClick = (image) => {
+    if (selectedImage && selectedImage.src === image.src) {
+      setSelectedImage(null);
+    } else {
+      setSelectedImage(image);
+    }
+  };
+
+  useEffect(() => {
+    if (resetSelectedImage) {
+      setSelectedImage(null);
+    }
+  }, [resetSelectedImage]);
+
   return (
-    <div className="gallery">
-      {images.map((image, index) => (
-        <div key={index} className="gallery-item">
-          <img src={image.thumb} alt={`Img ${index}`} />
-          <div dangerouslySetInnerHTML={{ __html: image.subHtml }} />
+    <div className="gallery" ref={galleryRef}>
+      {selectedImage ? (
+        <div className="selected-image">
+          <img
+            src={selectedImage.src}
+            alt="Selected"
+            onClick={() => {
+              setSelectedImage(null);
+            }}
+          />
+          <div
+            className="selected-image-text"
+            dangerouslySetInnerHTML={{ __html: selectedImage.subHtml }}
+          />
         </div>
-      ))}
+      ) : (
+        images.map((image, index) => (
+          <div
+            key={index}
+            className="gallery-item"
+            onClick={() => handleClick(image)}
+          >
+            <img src={image.thumb} alt={`Img ${index}`} />
+          </div>
+        ))
+      )}
     </div>
   );
 };
 
 const MyWorkPage = () => {
   const [isActive, setActiveTab] = useState("all");
+  const [resetSelectedImage, setResetSelectedImage] = useState(false);
 
   const digitalArt = [
     {
@@ -40,6 +87,31 @@ const MyWorkPage = () => {
       thumb: thu3,
       subHtml: "<h4>LDK Piece</h4><p>LDK art example</p>",
     },
+    {
+      src: pic4,
+      thumb: thu4,
+      subHtml: "<h4>Inwoo Art</h4><p>Artwork of Inwoo</p>",
+    },
+    {
+      src: pic5,
+      thumb: thu5,
+      subHtml: "<h4>LDK Piece</h4><p>LDK art example</p>",
+    },
+    {
+      src: pic6,
+      thumb: thu6,
+      subHtml: "<h4>LDK Piece</h4><p>LDK art example</p>",
+    },
+    {
+      src: pic7,
+      thumb: thu7,
+      subHtml: "<h4>LDK Piece</h4><p>LDK art example</p>",
+    },
+    {
+      src: pic8,
+      thumb: thu8,
+      subHtml: "<h4>LDK Piece</h4><p>LDK art example</p>",
+    },
   ];
 
   const threeDArt = [
@@ -52,25 +124,37 @@ const MyWorkPage = () => {
 
   const allArt = [...digitalArt, ...threeDArt];
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setResetSelectedImage(true);
+    setTimeout(() => setResetSelectedImage(false), 0);
+  };
+
   return (
     <div className="my-work-page">
       <h1>My Work</h1>
       <div className="button-group">
         <Button
-          className={isActive === "all" ? "active" : ""}
-          onClick={() => setActiveTab("all")}
+          className={`tab-button ${
+            isActive === "all" ? "active" : "notactive"
+          }`}
+          onClick={() => handleTabChange("all")}
         >
           All
         </Button>
         <Button
-          className={isActive === "digitalArt" ? "active" : ""}
-          onClick={() => setActiveTab("digitalArt")}
+          className={`tab-button ${
+            isActive === "digitalArt" ? "active" : "notactive"
+          }`}
+          onClick={() => handleTabChange("digitalArt")}
         >
           Digital Art
         </Button>
         <Button
-          className={isActive === "threeDArt" ? "active" : ""}
-          onClick={() => setActiveTab("threeDArt")}
+          className={`tab-button ${
+            isActive === "threeDArt" ? "active" : "notactive"
+          }`}
+          onClick={() => handleTabChange("threeDArt")}
         >
           3D Art
         </Button>
@@ -83,6 +167,7 @@ const MyWorkPage = () => {
             ? digitalArt
             : threeDArt
         }
+        resetSelectedImage={resetSelectedImage}
       />
     </div>
   );

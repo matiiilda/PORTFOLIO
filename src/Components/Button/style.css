@@ -12,6 +12,7 @@
   font-size: 1.2rem;
   background-color: transparent;
   transition: opacity 0.3s;
+  margin-right: var(--margin-small);
 }
 
 .button:hover {
