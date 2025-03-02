@@ -1,24 +1,29 @@
-.masonry-gallery-demo {
+.my-work-page {
+  padding-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gallery {
   margin: 0 auto;
+}
 
-  &:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+.gallery:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
-  .grid-sizer,
-  .lg-item {
-    width: 33.33%;
-  }
+.gallery-item {
+  width: 33.33%;
+  float: left;
+  margin-bottom: 10px;
+}
 
-  .lg-item {
-    float: left;
-    margin-bottom: 10px;
-  }
-
-  .lg-item img {
-    display: block;
-    max-width: 100%;
-  }
+.gallery-item img {
+  display: block;
+  max-width: 100%;
 }
