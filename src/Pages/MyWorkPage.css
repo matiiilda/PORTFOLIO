@@ -27,3 +27,14 @@
   display: block;
   max-width: 100%;
 }
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button.active {
+  background-color: var(--secondary-text-color);
+  border-color: var(--secondary-text-color);
+}

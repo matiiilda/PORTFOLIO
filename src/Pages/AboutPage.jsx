@@ -1,15 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../ThemeContext.jsx';
-import { PiStarFourFill } from 'react-icons/pi';
-import { FaComputer, FaCompassDrafting } from 'react-icons/fa6';
+import React, { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../ThemeContext.jsx";
+import { PiStarFourFill } from "react-icons/pi";
+import { FaComputer, FaCompassDrafting } from "react-icons/fa6";
 import { FaFileDownload } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
-import ScrollFade from '../Components/ScrollFade.jsx';
-import AutoFade from '../Components/AutoFade.jsx';
-import cvPDF from '../assets/MatildaDanielssoncv.pdf';
-import Lovelight from '../assets/Love-icon-light.svg';
-import Lovedark from '../assets/Love-icon-dark.svg';
-import './AboutPage.css';
+import ScrollFade from "../Components/ScrollFade.jsx";
+import AutoFade from "../Components/AutoFade.jsx";
+import cvPDF from "../assets/MatildaDanielssoncv.pdf";
+import Lovelight from "../assets/Love-icon-light.svg";
+import Lovedark from "../assets/Love-icon-dark.svg";
+import Button from "../Components/Button/Button.jsx";
+import "./AboutPage.css";
 
 const AboutPage = () => {
   const { isDark } = useContext(ThemeContext);
@@ -18,10 +19,21 @@ const AboutPage = () => {
 
   // Array of words for the Love Items section
   const words = [
-    "Punk-culture", "Motion design", "Cats", "Invisible design", 
-    "70's music", "Rounded corners", "Cooking", "Brain-storming", 
-    "Video games", "Vibrant colors", "Grapefruit Soju", "Painting", 
-    "Reading long books", "Lots of whitespace", "Late evenings"
+    "Punk-culture",
+    "Motion design",
+    "Cats",
+    "Invisible design",
+    "70's music",
+    "Rounded corners",
+    "Cooking",
+    "Brain-storming",
+    "Video games",
+    "Vibrant colors",
+    "Grapefruit Soju",
+    "Painting",
+    "Reading long books",
+    "Lots of whitespace",
+    "Late evenings",
   ];
 
   // Handle window resize to update isMobile state
@@ -30,8 +42,8 @@ const AboutPage = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Duplicate items for horizontal scrolling effect
@@ -42,7 +54,9 @@ const AboutPage = () => {
       scrollers.forEach((scroller) => {
         scroller.setAttribute("data-animated", true);
 
-        const scrollerInner = scroller.querySelector(".horizontal-scrolling-items__inner");
+        const scrollerInner = scroller.querySelector(
+          ".horizontal-scrolling-items__inner"
+        );
         const scrollerContent = Array.from(scrollerInner.children);
 
         scrollerContent.forEach((item) => {
@@ -61,128 +75,199 @@ const AboutPage = () => {
       setIsScrolled(scrollPosition > 150);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ---------------------------
+  //Fragmented sections
+  //----------------------------
 
-  
-// ---------------------------
-//Fragmented sections
-//----------------------------
+  //Render the About Text section
+  const renderAboutText = () => {
+    const aboutText = (
+      <AutoFade className="About-text">
+        <div className="p1">
+          <p className={`p ${isScrolled ? "hidden" : "visible"}`}>
+            I grew up with a GameBoy in one hand, a paintbrush in the other and
+            a love for creativity. Little did I know that this would be my
+            gateway into interactive design.
+          </p>
+          <p className={`p ${isScrolled ? "hidden" : "visible"}`}>
+            Before UX, I studied orthotics and prosthetics, where I learned the
+            value of empathy and tailored solutions. Eventually, I discovered
+            that my wish to help people and my love for design could intertwine
+            into a career in UX. <br />I aim to advocate for greater attention
+            to accessibility and to create products that are usable by all.
+          </p>
+        </div>
+        <div className="p2">
+          {isMobile ? (
+            <p className={`p ${isScrolled ? "visible" : "hidden"}`}>
+              I find inspiration from the work of: <br />
+              Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, <br />
+              Adham Dannaway, <br />
+              and of course all of my classmates.
+            </p>
+          ) : (
+            <p className={`p ${isScrolled ? "visible" : "hidden"}`}>
+              I find inspiration from the work of: <br />
+              Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, Adham Dannaway,{" "}
+              <br />
+              and of course all of my classmates.
+            </p>
+          )}
+          <p className={`p ${isScrolled ? "visible" : "hidden"}`}>
+            Creativity is my main driving force; I love exploring and
+            experimenting with new ideas, and if there's a new tool or skillset
+            I need to learn along the way, even better.
+          </p>
+        </div>
+      </AutoFade>
+    );
 
-//Render the About Text section
-const renderAboutText = () => {
-  const aboutText = (
-    <AutoFade className='About-text'>
-      <div className='p1'>
-        <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-          I grew up with a GameBoy in one hand, a paintbrush in the other and a love for 
-          creativity. Little did I know that this would be my gateway into interactive design.
-        </p>
-        <p className={`p ${isScrolled ? 'hidden' : 'visible'}`}>
-        Before UX, I studied orthotics and prosthetics, where I learned the 
-        value of empathy and tailored solutions. Eventually, I discovered that 
-        my wish to help people and my love for design could intertwine into a career in UX. <br/>
-        I aim to advocate for greater attention to accessibility and to create products that are 
-        usable by all.
-        </p>
+    const skillsText = (
+      <div className="Skills-text">
+        <div className="Skill-list">
+          <div className="Skill-list-title">
+            <FaComputer />
+            <h3>Proficient with</h3>
+          </div>
+          <div className={`tags ${isDark ? "dark" : ""}`}>
+            <a
+              href="https://www.figma.com/design/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Figma
+            </a>
+            <a
+              href="https://www.w3schools.com/whatis/whatis_html.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              HTML
+            </a>
+            <a
+              href="https://www.w3schools.com/whatis/whatis_css.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CSS
+            </a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JavaScript
+            </a>
+            <a
+              href="https://react.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              React
+            </a>
+            <a
+              href="https://git-scm.com/about/branching-and-merging"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Git
+            </a>
+          </div>
+        </div>
+        <div className="Skill-list">
+          <div className="Skill-list-title">
+            <FaCompassDrafting />
+            <h3>Currently learning</h3>
+          </div>
+          <div className={`tags ${isDark ? "dark" : ""}`}>
+            <a
+              href="https://www.w3schools.com/nodejs/nodejs_intro.asp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Node.js
+            </a>
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TypeScript
+            </a>
+            <a
+              href="https://www.adobe.com/ai/overview.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Adobe illustrator
+            </a>
+            <a
+              href="https://www.blender.org/about/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Blender
+            </a>
+          </div>
+        </div>
+        <div className="Skill-list lang">
+          <div className="Skill-list-title">
+            <GrLanguage />
+            <h3>Languages</h3>
+          </div>
+          <div className={`tags ${isDark ? "dark" : ""}`}>
+            <a>Svenska</a>
+            <a>English</a>
+            <a className="jap">日本語</a>
+          </div>
+        </div>
       </div>
-      <div className='p2'>
-      {isMobile ? ( 
-          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-            I find inspiration from the work of: <br />Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, <br />Adham 
-            Dannaway, <br />and of course all of my classmates.
-          </p>
-        ) : ( 
-          <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-            I find inspiration from the work of: <br />Robert Kurvitz, Juxtoposed, Masayoshi Sutoh, Adham 
-            Dannaway, <br />and of course all of my classmates.
-          </p>
+    );
+
+    return (
+      <section className="About-section">
+        {isMobile ? (
+          <>
+            {aboutText}
+            {skillsText}
+          </>
+        ) : (
+          <>
+            {skillsText}
+            {aboutText}
+          </>
         )}
-        <p className={`p ${isScrolled ? 'visible' : 'hidden'}`}>
-          Creativity is my main driving force; I love exploring and experimenting with new ideas, and if 
-          there's a new tool or skillset I need to learn along the way, even better.
-        </p>
-      </div>
-    </AutoFade>
-  );
-
-  const skillsText = (
-    <div className='Skills-text'>
-      <div className='Skill-list'>
-        <div className='Skill-list-title'>
-          <FaComputer /><h3>Proficient with</h3>
-        </div>
-        <div className={`tags ${isDark ? 'dark' : ''}`}>
-          <a href="https://www.figma.com/design/" target="_blank" rel="noopener noreferrer">Figma</a>
-          <a href="https://www.w3schools.com/whatis/whatis_html.asp" target="_blank" rel="noopener noreferrer">HTML</a>
-          <a href="https://www.w3schools.com/whatis/whatis_css.asp" target="_blank" rel="noopener noreferrer">CSS</a>
-          <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a>
-          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
-          <a href="https://git-scm.com/about/branching-and-merging" target="_blank" rel="noopener noreferrer">Git</a>
-        </div>
-      </div>
-      <div className='Skill-list'>
-        <div className='Skill-list-title'>
-          <FaCompassDrafting /><h3>Currently learning</h3>
-        </div>
-        <div className={`tags ${isDark ? 'dark' : ''}`}>
-          <a href="https://www.w3schools.com/nodejs/nodejs_intro.asp" target="_blank" rel="noopener noreferrer">Node.js</a>
-          <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
-          <a href="https://www.adobe.com/ai/overview.html" target="_blank" rel="noopener noreferrer">Adobe illustrator</a>
-          <a href="https://www.blender.org/about/" target="_blank" rel="noopener noreferrer">Blender</a>
-        </div>
-      </div>
-      <div className='Skill-list lang'>
-        <div className='Skill-list-title'>
-        <GrLanguage /><h3>Languages</h3>
-        </div>
-        <div className={`tags ${isDark ? 'dark' : ''}`}>
-          <a>Svenska</a>
-          <a>English</a>
-          <a className='jap'>日本語</a>
-        </div>
-      </div>
-
-    </div>
-  );
-
-  return (
-    <section className='About-section'>
-      {isMobile ? (
-        <>
-          {aboutText}
-          {skillsText}
-        </>
-      ) : (
-        <>
-          {skillsText}
-          {aboutText}
-        </>
-      )}
-    </section>
-  );
-};
-
+      </section>
+    );
+  };
 
   // Render the Experience section
   const renderExperience = () => (
     <ScrollFade>
-      <div className='Experience-list'>
-        <div className='Experience-list-title'>
-          <h1>Experience</h1><PiStarFourFill />
+      <div className="Experience-list">
+        <div className="Experience-list-title">
+          <h1>Experience</h1>
+          <PiStarFourFill />
         </div>
-        <div className='Experience-card'>
-          <div className='Experience-card-header'>
-            <div className='row'>
+        <div className="Experience-card">
+          <div className="Experience-card-header">
+            <div className="row">
               <h3>Your company here</h3>
             </div>
-            <div className='row'>
+            <div className="row">
               {isMobile ? (
                 <>
-                  <h5>Position: <br />Dream Team Member</h5>
-                  <h5>Location: <br /> Anywhere with WiFi</h5>
+                  <h5>
+                    Position: <br />
+                    Dream Team Member
+                  </h5>
+                  <h5>
+                    Location: <br /> Anywhere with WiFi
+                  </h5>
                 </>
               ) : (
                 <>
@@ -194,24 +279,27 @@ const renderAboutText = () => {
           </div>
           {isMobile ? (
             <p>
-              I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was 
-              supporting the team by providing fresh perspectives and injecting creativity into our work. 
-              I aimed to make each day enjoyable for myself and my colleagues.
+              I eagerly tackled new challenges and lent a hand to innovative
+              projects. My main focus was supporting the team by providing fresh
+              perspectives and injecting creativity into our work. I aimed to
+              make each day enjoyable for myself and my colleagues.
             </p>
           ) : (
             <p>
-            I eagerly tackled new challenges and lent a hand to innovative projects. My main focus was 
-            supporting the team by providing fresh perspectives and injecting creativity into our work, 
-            while absorbing all the knowledge that I could. With my genuine passion for design and a 
-            sprinkle of humor, I aimed to make each day enjoyable for myself and my colleagues.
+              I eagerly tackled new challenges and lent a hand to innovative
+              projects. My main focus was supporting the team by providing fresh
+              perspectives and injecting creativity into our work, while
+              absorbing all the knowledge that I could. With my genuine passion
+              for design and a sprinkle of humor, I aimed to make each day
+              enjoyable for myself and my colleagues.
             </p>
           )}
         </div>
-        <a href={cvPDF} download="MatildaCV" target='_blank'>
-          <button className="cv-button">
+        <a href={cvPDF} download="MatildaCV" target="_blank">
+          <Button>
             <FaFileDownload />
             <p>Download CV</p>
-          </button>
+          </Button>
         </a>
       </div>
     </ScrollFade>
@@ -219,12 +307,9 @@ const renderAboutText = () => {
 
   // Render the Love Items section
   const renderLoveItems = () => (
-    <div className='Love-items'>
-      <img 
-        src={isDark ? Lovedark : Lovelight} 
-        className='Love-icon'
-      />
-      <div className={`horizontal-scrolling-items ${isDark ? 'dark' : ''}`}>
+    <div className="Love-items">
+      <img src={isDark ? Lovedark : Lovelight} className="Love-icon" />
+      <div className={`horizontal-scrolling-items ${isDark ? "dark" : ""}`}>
         <div className="horizontal-scrolling-items__inner">
           {words.map((word, index) => (
             <div key={index} className="horizontal-scrolling-items__item">
@@ -240,7 +325,7 @@ const renderAboutText = () => {
   const SpotifyEmbed = () => {
     return (
       <iframe
-        style={{ borderRadius: '12px' }}
+        style={{ borderRadius: "12px" }}
         src="https://open.spotify.com/embed/track/0WQiDwKJclirSYG9v5tayI?utm_source=generator"
         width="auto"
         height="152"
@@ -253,7 +338,7 @@ const renderAboutText = () => {
   };
 
   return (
-    <div className='AboutPage'>
+    <div className="AboutPage">
       {isMobile ? (
         <>
           {renderAboutText()}

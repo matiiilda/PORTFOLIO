@@ -5,6 +5,7 @@ import pic2 from "../assets/art/cryptopfp1 1.png";
 import thu2 from "../assets/art/cryptopfp1 2.png";
 import pic3 from "../assets/art/ldk1 1.png";
 import thu3 from "../assets/art/ldk1 2.png";
+import Button from "../Components/Button/Button";
 import "./MyWorkPage.css";
 
 const Gallery = ({ images }) => {
@@ -21,7 +22,7 @@ const Gallery = ({ images }) => {
 };
 
 const MyWorkPage = () => {
-  const [activeTab, setActiveTab] = useState("digitalArt");
+  const [isActive, setActiveTab] = useState("all");
 
   const digitalArt = [
     {
@@ -49,26 +50,40 @@ const MyWorkPage = () => {
     },
   ];
 
+  const allArt = [...digitalArt, ...threeDArt];
+
   return (
     <div className="my-work-page">
       <h1>My Work</h1>
-      <button
-        className={`mr-2 px-4 py-2 rounded ${
-          activeTab === "digitalArt" ? "bg-blue-500 text-white" : "bg-gray-300"
-        }`}
-        onClick={() => setActiveTab("digitalArt")}
-      >
-        Digital Art
-      </button>
-      <button
-        className={`px-4 py-2 rounded ${
-          activeTab === "threeDArt" ? "bg-blue-500 text-white" : "bg-gray-300"
-        }`}
-        onClick={() => setActiveTab("threeDArt")}
-      >
-        Photography
-      </button>
-      <Gallery images={activeTab === "digitalArt" ? digitalArt : threeDArt} />
+      <div className="button-group">
+        <Button
+          className={isActive === "all" ? "active" : ""}
+          onClick={() => setActiveTab("all")}
+        >
+          All
+        </Button>
+        <Button
+          className={isActive === "digitalArt" ? "active" : ""}
+          onClick={() => setActiveTab("digitalArt")}
+        >
+          Digital Art
+        </Button>
+        <Button
+          className={isActive === "threeDArt" ? "active" : ""}
+          onClick={() => setActiveTab("threeDArt")}
+        >
+          3D Art
+        </Button>
+      </div>
+      <Gallery
+        images={
+          isActive === "all"
+            ? allArt
+            : isActive === "digitalArt"
+            ? digitalArt
+            : threeDArt
+        }
+      />
     </div>
   );
 };

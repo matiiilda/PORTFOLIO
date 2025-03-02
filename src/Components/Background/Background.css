@@ -1,20 +1,40 @@
 /* Variables */
 
 :root {
-  --background-gradient-light: linear-gradient( #8FA6E9 0%, #DDC9E2 11%, #F8A8C0 81%, #FFCA99 100%);
-  --background-gradient-dark: linear-gradient( #2D2151 4.7%, #6D4174 21.22%, #33274d 86.25%, #8d295b 104.53%);
-  --header-gradient-light: linear-gradient(to right, #9FAAE0, #EDACC4);
-  --header-menu-light: #9FAAE0;
-  --header-menu-dark: #271C44;
-  --header-gradient-dark: linear-gradient(to right, #271C44, #874B80);
-  --card-gradient-light: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0.5) 15%, hsla(0, 0%, 100%, 0.5) 90%, hsla(0, 0%, 100%, 0) 100%);
-  --card-gradient-dark: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(223, 36%, 16%, 0.6) 15%, hsl(224, 36%, 16%, 0.6) 90%, hsla(0, 0%, 100%, 0) 100%);
- 
+  --background-gradient-light: linear-gradient(
+    #8fa6e9 0%,
+    #ddc9e2 11%,
+    #f8a8c0 81%,
+    #ffca99 100%
+  );
+  --background-gradient-dark: linear-gradient(
+    #2d2151 4.7%,
+    #6d4174 21.22%,
+    #33274d 86.25%,
+    #8d295b 104.53%
+  );
+  --header-gradient-light: linear-gradient(to right, #9faae0, #edacc4);
+  --header-menu-light: #9faae0;
+  --header-menu-dark: #271c44;
+  --header-gradient-dark: linear-gradient(to right, #271c44, #874b80);
+  --card-gradient-light: linear-gradient(
+    hsla(0, 0%, 100%, 0) 0%,
+    hsla(0, 0%, 100%, 0.5) 15%,
+    hsla(0, 0%, 100%, 0.5) 90%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+  --card-gradient-dark: linear-gradient(
+    hsla(0, 0%, 100%, 0) 0%,
+    hsla(223, 36%, 16%, 0.6) 15%,
+    hsl(224, 36%, 16%, 0.6) 90%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+
   --primary-text-color-light: #1b2339;
-  --secondary-text-color-light: #3D4762;
-  
-  --primary-text-color-dark: #E6E2FF;
-  --secondary-text-color-dark: #3D4762;
+  --secondary-text-color-light: #e6e2ff;
+
+  --primary-text-color-dark: #e6e2ff;
+  --secondary-text-color-dark: #1b2339;
 }
 
 /* Light theme */
@@ -134,36 +154,36 @@ body {
     right: 3vw;
     width: 55vw;
   }
-  
+
   .cloud2 {
     top: 55vh;
     left: -15vw;
     width: 80vw;
   }
-  
+
   .cloud3 {
-display: none;
+    display: none;
   }
-  
+
   .cloud4 {
     top: 68vh;
     right: 3vw;
     width: 70vw;
     transform: scaleX(-1);
   }
-  
+
   .cloud5 {
     bottom: 22%;
     left: 38%;
     width: 90vw;
   }
-  
+
   .cloud6 {
     bottom: 45%;
     left: -5%;
     width: 50vw;
   }
-  
+
   .cloud7 {
     bottom: 40%;
     left: 38%;

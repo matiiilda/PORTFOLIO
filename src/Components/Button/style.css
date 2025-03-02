@@ -1,0 +1,43 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  padding: 0.625em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  color: var(--primary-text-color);
+  border: 2px solid var(--primary-text-color);
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: transparent;
+  transition: opacity 0.3s;
+}
+
+.button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.button p {
+  flex: 1;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 5px;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .cv-button {
+    padding: 0.1875em;
+    width: auto;
+  }
+
+  .cv-button p {
+    padding-right: 5px;
+    font-size: 0.75em;
+  }
+
+  .cv-button svg {
+    max-height: 16px;
+  }
+}
